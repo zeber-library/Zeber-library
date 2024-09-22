@@ -1,0 +1,96 @@
+@media (max-width: 1024px) {
+    body .LibraryProfilePage .MainNavbar {
+        background: #eeeeee;
+        width: 100%;
+        position: fixed;
+        height: 100%;
+        justify-content: center;
+        z-index: 98;
+    }
+    body .LibraryProfilePage .MainNavbar .Logo{
+        display: none;
+    }
+    body .LibraryProfilePage .MainNavbar .Intro{
+        width: 95%;
+    }
+    body .LibraryProfilePage .MainNavbar .MainSideBar ul{
+        width: 95%;
+    }
+}
+
+.LibraryProfilePage .MainNavbar {
+    width: 35%;
+    padding: 0 2%;
+    display: flex;
+    padding-left: 6%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.LibraryProfilePage .MainNavbar * {
+    display: flex;
+}
+
+.LibraryProfilePage .MainNavbar .Logo {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 8%;
+}
+
+.LibraryProfilePage .MainNavbar .Logo img {
+    width: 50%;
+}
+
+.LibraryProfilePage .MainNavbar .Intro {
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    padding: 15% 5%;
+}
+
+.LibraryProfilePage .MainNavbar .Intro .avatar {
+    width: 25%;
+    height: 10vh;
+    overflow: hidden;
+    background: #5454ff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.LibraryProfilePage .MainNavbar .Intro .avatar img {
+    width: 80%;
+}
+
+.LibraryProfilePage .MainNavbar .Intro:hover .avatar img {
+    scale: 1.2;
+}
+
+.LibraryProfilePage .MainNavbar .Intro .content {
+    flex-direction: column;
+}
+
+.LibraryProfilePage .MainNavbar .MainSideBar ul{
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+.LibraryProfilePage .MainNavbar .MainSideBar ul *{
+    text-decoration: none;
+    gap: 15px;
+    align-items: center;
+    background: #fff;
+}
+.LibraryProfilePage .MainNavbar .MainSideBar ul li a{
+    padding: 5% 10%;
+    color: #000;
+    width: 100%;
+}
+.LibraryProfilePage .MainNavbar .MainSideBar ul li svg{
+    color: #5274FF;
+}
+.LibraryProfilePage .MainNavbar .MainSideBar ul li a:hover{
+    text-decoration: underline;
+}

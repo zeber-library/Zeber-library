@@ -1,0 +1,14 @@
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* height: 80px; Increase the height */
+  background-color: #f8f9fa; /* Optional: Adjust background if needed */
+  
+}
+
+/* Ensure body content starts after the fixed navbar */
+body {
+  padding-top: 80px; /* Add padding equal to the navbar height to avoid content overlapping */
+}

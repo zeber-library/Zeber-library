@@ -1,0 +1,624 @@
+/* Importing Google Font - Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+
+
+
+.reel-app-page{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.reel-app-page *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Color variables for light theme */
+.reel-app-page{
+  --white-color: #fff;
+  --black-color: #000;
+  --light-white-color: #f0f0f0;
+  --light-gray-color: #e5e5e5;
+  --border-color: #ccc;
+  --primary-color: #3b82f6;
+  --secondary-color: #404040;
+  --overlay-dark-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Color variables for dark theme */
+.reel-app-page.dark-mode {
+  --white-color: #171717;          /* Background color for dark mode */
+  --black-color: #d4d4d4;          /* Text color for dark mode */
+  --light-white-color: #333;       /* Lighter background elements */
+  --light-gray-color: #404040;     /* Light gray color for borders, etc. */
+  --border-color: #808080;         /* Border color for dark mode */
+  --secondary-color: #d4d4d4;      /* Secondary text color for dark mode */
+  --overlay-dark-color: rgba(255, 255, 255, 0.6); /* Overlay color adjusted for dark mode */
+}
+
+.reel-app-page{
+  background: var(--white-color);
+}
+
+
+.reel-app-page .sign-in-button {
+  background-color: #797979; /* Example: Green background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+
+.reel-app-page .lo-button {
+  background-color: #797979; /* Example: Green background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  width: 280px;
+
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+
+.reel-app-page .sign-in-button:hover {
+  background-color: #1a34f6; /* Slightly darker green on hover */
+}
+
+
+.reel-app-page .lo-button:hover {
+  background-color: #1a34f6; /* Slightly darker green on hover */
+}
+
+
+.reel-app-page .container {
+  display: flex;
+  overflow: hidden;
+  max-height: 100vh;
+  flex-direction: column;
+}
+
+.reel-app-page header, .sidebar .nav-left, .category-list {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white-color);
+}
+
+.reel-app-page .reel-navbar {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+}
+
+:where(.reel-app-page  .reel-navbar,.reel-app-page  .sidebar) .nav-section {
+  gap: 1rem;
+}
+
+:where(.reel-app-page .reel-navbar,.reel-app-page  .sidebar) :where(.reel-app-page .nav-section,.reel-app-page  .nav-logo,.reel-app-page  .search-form) {
+  display: flex;
+  align-items: center;
+}
+
+:where(.reel-app-page .reel-navbar,.reel-app-page  .sidebar) :where(.reel-app-page .logo-image,.reel-app-page  .user-image) {
+  width: 72px;
+  height: 32px;
+  cursor: pointer;
+  
+}
+
+:where(.reel-app-page .reel-navbar,.reel-app-page  .sidebar) .nav-section .nav-button {
+  border: none;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background: none;
+  border-radius: 50%;
+}
+
+:where(.reel-app-page .reel-navbar,.reel-app-page  .sidebar) .nav-section .nav-button:hover {
+  background: var(--light-gray-color) !important;
+}
+
+:where(.reel-app-page .reel-navbar,.reel-app-page  .sidebar) .nav-button i {
+  font-size: 1.5rem;
+  display: flex;
+  color: var(--black-color);
+  align-items: center;
+  justify-content: center;
+}
+
+:where(.reel-app-page .reel-navbar,.reel-app-page  .sidebar).reel-app-page  .nav-logo {
+  display: flex;
+  gap: 0.1rem;
+  text-decoration: none;
+}
+
+:where(.reel-app-page .reel-navbar,.reel-app-page  .sidebar).reel-app-page .nav-logo .logo-text {
+  color: var(--black-color);
+  font-size: 1.25rem;
+}
+
+.reel-app-page .reel-navbar .nav-center {
+  gap: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.reel-app-page .reel-navbar .search-form {
+  flex: 1;
+  height: 40px;
+  max-width: 550px;
+  margin-left: 50px;
+}
+
+.reel-app-page .reel-navbar .search-form .search-input {
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  padding: 0 1rem;
+  outline: none;
+  margin-left: 10px;
+  color: var(--black-color);
+  background: var(--white-color);
+  border-radius: 3.1rem 0 0 3.1rem;
+  border: 1px solid var(--border-color);
+}
+
+.reel-app-page .reel-navbar .search-form .search-input:focus {
+  border-color: var(--primary-color);
+}
+
+.reel-app-page .reel-navbar .search-form .search-button {
+  height: 40px;
+  width: auto;
+  padding: 0 1.25rem;
+  border-radius: 0 3.1rem 3.1rem 0;
+  border: 1px solid var(--border-color);
+  border-left: 0;
+}
+
+.reel-app-page .reel-navbar .nav-center .mic-button {
+  background: var(--light-white-color);
+}
+
+.reel-app-page .reel-navbar .nav-right .search-button {
+  display: none;
+}
+
+.reel-app-page .main-layout {
+  display: flex;
+  overflow-y: auto;
+  scrollbar-color: #a6a6a6 transparent;
+}
+
+.reel-app-page .main-layout .sidebar {
+  width: 280px;
+  overflow: hidden;
+  padding: 0 0.7rem 0;
+  background: var(--white-color);
+}
+
+.reel-app-page .main-layout .sidebar .nav-left {
+  display: none;
+  padding: 0.5rem 0.3rem;
+}
+
+.reel-app-page.sidebar-hidden .main-layout .sidebar {
+  width: 0;
+  padding: 0;
+}
+
+.reel-app-page .sidebar .links-container {
+  padding: 1rem 0 2rem;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.reel-app-page .sidebar .links-container:hover {
+  scrollbar-color: #a6a6a6 transparent;
+}
+
+.reel-app-page .sidebar .link-section .link-item {
+  display: flex;
+  color: var(--black-color);
+  white-space: nowrap;
+  align-items: center;
+  font-size: 0.938rem;
+  padding: 0.37rem 0.75rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.reel-app-page .sidebar .link-section .link-item:hover {
+  background: var(--light-gray-color);
+}
+
+.reel-app-page .sidebar .link-section .link-item i {
+  font-size: 1.4rem;
+  margin-right: 0.625rem;
+}
+
+.reel-app-page .sidebar .link-section .section-title {
+  color: var(--black-color);
+  font-weight: 600;
+  font-size: 0.938rem;
+  margin: 1rem 0 0.5rem 0.5rem;
+}
+
+.reel-app-page .sidebar .section-separator {
+  height: 1px;
+  margin: 0.64rem 0;
+  background: var(--light-gray-color);
+}
+
+.reel-app-page .main-layout .content-wrapper {
+  padding: 0 1rem;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.reel-app-page .content-wrapper .category-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.75rem;
+  padding: 0.75rem 0 0.7rem;
+  scrollbar-width: none;
+}
+
+.reel-app-page .category-list .category-button {
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.94rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+  color: var(--black-color);
+  padding: 0.4rem 0.75rem;
+  background: var(--light-gray-color);
+}
+
+.reel-app-page .category-list .category-button.active {
+  color: var(--white-color);
+  background: var(--black-color);
+  pointer-events: none;
+}
+
+.reel-app-page .dark-mode .category-list .category-button.active {
+  filter: brightness(120%);
+}
+
+.reel-app-page .category-list .category-button:not(.active):hover {
+  background: var(--border-color);
+}
+
+.reel-app-page .content-wrapper .video-list {
+  display: grid; 
+  gap: 1rem;
+  padding: 1.25rem 0 4rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+
+
+/* Responsive media code for small devices */
+@media (max-width: 768px) {
+  .reel-app-page .reel-navbar .nav-center {
+    display: none;
+  }
+  .reel-app-page .lo-button {
+    width: 100px;
+    margin-top: 10px;
+    height: 50px;
+    margin-left: -25px;
+    display: none;
+    
+  }
+
+  .reel-app-page .reel-navbar .nav-right .search-button {
+    display: block;
+  }
+
+  .reel-app-page .main-layout .screen-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 15;
+    width: 100%;
+    height: 100vh;
+    background: var(--overlay-dark-color);
+    transition: 0.2s ease;
+  }
+  
+
+  .reel-app-page.sidebar-hidden .main-layout .screen-overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .reel-app-page .main-layout .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    height: 100vh;
+    transition: 0.2s ease;
+  }
+
+  .reel-app-page.sidebar-hidden .main-layout .sidebar {
+    left: -280px;
+  }
+
+  .reel-app-page .main-layout .sidebar .nav-left {
+    display: flex;
+  }
+}
+
+
+.reel-app-page .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.reel-app-page .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.reel-app-page .slide-content {
+  width: 360px; /* Default width */
+  height: 600px; /* Default height */
+  margin-top: -70px; /* Height adjustment */
+  border-radius: 36px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  overflow: hidden; /* Hide overflow */
+  background: #000; /* Background color */
+  position: relative; /* For positioning content inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reel-app-page .slide-actions {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust to center */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between buttons */
+}
+
+.reel-app-page .action-button {
+  background: rgba(87, 87, 87, 0.438); /* Semi-transparent background */
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 20px; /* Adjust icon size */
+  padding: 10px; /* Slightly larger padding */
+  display: flex;
+  margin-right: -300px;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease; /* Add transition for scaling effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add subtle shadow for depth */
+}
+
+.reel-app-page .action-button:hover {
+  background: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+.reel-app-page .action-button:active {
+  background: rgba(0, 0, 0, 0.9); /* Even darker background on click */
+  transform: scale(1); /* Return to original size when clicked */
+}
+
+.reel-app-page .slide-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the container */
+}
+
+/* Responsive media code for small devices */
+@media (max-width: 768px) {
+  .reel-app-page .comment-box {
+    position: absolute;
+    bottom: -100%;
+    width: 366px;
+    height: 588px;
+    border-radius: 36px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: var(--white-color);
+    padding: 20px;
+    transition: bottom 0.3s ease-in-out;
+    z-index: 10;
+    margin-left: 445px;
+    overflow-y: auto;
+  }
+  
+  .reel-app-page .comment-box.active {
+    bottom: 0; /* Slide up into view */
+  }
+  
+  .reel-app-page .slide-content {
+    width: 90vw; /* Increase width for mobile devices */
+    height: 80vh; /* Increase height for mobile devices */
+    border-radius: 20px; /* Adjust rounded corners */
+    margin-bottom: 95px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Adjust shadow */
+    margin-top: 0; /* Adjust margin-top if needed */
+  }
+
+  .reel-app-page .slide-actions {
+    margin-right:  10px; /* Adjust distance from the right edge for mobile */
+    top: 57%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust to center */
+
+    
+  }
+
+  .reel-app-page .action-button {
+    font-size: 20px; /* Adjust font size for mobile */
+    padding: 10px; /* Adjust padding for mobile */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Adjust shadow for mobile */
+  }
+}
+
+/* Desktop-specific styles */
+
+/* Swiper Dark Mode Styles */
+.reel-app-page.dark-mode .slide-content {
+  background: var(--white-color); /* Background color for Swiper in dark mode */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Optional shadow adjustment for dark mode */
+}
+
+.reel-app-page.dark-mode .swiper-slide {
+  background: var(--white-color); /* Background color for each slide */
+}
+
+.reel-app-page.dark-mode .action-button {
+  background: rgba(255, 255, 255, 0.3); /* Adjust button background for dark mode */
+  color: var(--black-color);            /* Adjust icon color for dark mode */
+}
+
+.reel-app-page.dark-mode .action-button:hover {
+  background: rgba(255, 255, 255, 0.4); /* Darker background on hover in dark mode */
+}
+
+.reel-app-page.dark-mode .action-button:active {
+  background: rgba(255, 255, 255, 0.5); /* Even darker background on click in dark mode */
+}
+/* Comment Box Styling */
+.reel-app-page .comment-box {
+  position: absolute;
+  bottom: -100%;
+  width: 360px;
+  height: 588px;
+  border-radius: 36px;
+  background-color: var(--black-color);
+  opacity: 0.9;
+  color: var(--white-color);
+  padding: 20px;
+  transition: bottom 0.3s ease-in-out;
+  z-index: 10;
+  margin-left: 440px;
+  overflow-y: auto;
+}
+
+.reel-app-page .comment-box.active {
+  bottom: 0; /* Slide up into view */
+}
+
+.reel-app-page .comment-box h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.reel-app-page .comment-box .comment-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+}
+
+.reel-app-page .comment-box .comment-input:focus {
+  outline: none;
+}
+.reel-app-page .comment-box-body {
+  margin-top: 370px;
+  padding: 7px;
+  background-color: rgba(0, 0, 0, 0.8); /* Slightly lighter background for better readability */
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add subtle shadow */
+}
+
+.reel-app-page .comment-box-body textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 15px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.15); /* Light background with some transparency */
+  color: var(--white-color);
+  font-size: 1rem;
+  resize: none; /* Prevent resizing */
+}
+
+.reel-app-page .comment-box-body .submit-comment {
+  width: 100%;
+  padding: 12px;
+  border-radius: 15px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.reel-app-page .comment-box-body .submit-comment:hover {
+  background-color: var(--primary-color-dark);
+}
+.reel-app-page .comment-box .comment-list {
+  margin-top: 20px;
+}
+
+.reel-app-page .comment-box .comment-list .comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reel-app-page .comment-box .comment-list .comment img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.reel-app-page .comment-box .comment-list .comment .comment-text {
+  color: var(--white-color);
+}
+
+.reel-app-page .comment-box .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.reel-app-page.sidebar-hidden .comment-box {
+  margin-left: 563px; /* Align with screen edge when sidebar is hidden */
+}
+
+/* Adjust comment box position when sidebar is visible */
+.reel-app-page:not(.sidebar-hidden) .comment-box {
+  margin-left: 445px; /* Align with sidebar when visible */
+}

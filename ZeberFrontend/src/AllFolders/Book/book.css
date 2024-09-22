@@ -1,0 +1,1243 @@
+/*scoped css inside the .book-container*/
+.book-container {
+    background: #eeeeee;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    transition: .2s ease-in-out all;
+}
+
+.book-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    transition: .2s ease-in-out all;
+}
+
+.book-container p,
+.book-container h1,
+.book-container h2,
+.book-container h3,
+.book-container h4,
+.book-container h5,
+.book-container h6,
+.book-container a,
+.book-container button,
+.book-container li,
+.book-container ul,
+.book-container ol {
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    transition: .2s ease-in-out all;
+}
+
+
+
+.book-container .Nav #naVisible {
+    display: none;
+}
+
+.book-container .Nav label i {
+    display: none;
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+    * {
+        /* font-size: smaller; */
+        max-width: 760px;
+    }
+
+    .book-container {
+        overflow-x: hidden;
+    }
+
+
+    .book-container .Nav label i {
+        position: absolute;
+        font-size: 25px;
+        z-index: 9999;
+        padding: 5px 10px;
+        display: block;
+        right: 0;
+    }
+
+    .book-container .Nav #MainNav {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+
+    .book-container .Nav #naVisible:checked~nav .navRight {
+        right: 0;
+        width: 50%;
+        padding: 25px;
+        transform: scale(1);
+    }
+
+
+
+
+
+    .book-container .Nav #naVisible:checked~label i:nth-child(1) {
+        display: none;
+    }
+
+    .book-container .Nav #naVisible:checked~label i:nth-child(2) {
+        display: block;
+    }
+
+    .book-container .Nav label i:nth-child(2) {
+        display: none;
+    }
+
+    .book-container .Nav nav .navLeft a {
+        width: 100%;
+        min-width: 340px;
+    }
+
+    .book-container .Nav nav .navRight {
+        gap: 10px;
+        background: #fafafa;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: -100%;
+        flex-direction: column;
+        transform: scale(0);
+    }
+
+    .book-container .Nav nav div.navMiddle {
+        width: 100%;
+        min-width: 340px;
+    }
+
+    .book-container .Nav #MainNav .logo {
+        width: 100%;
+        min-width: 340px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .book-container .Nav #MainNav .logo img {
+        width: 50%;
+    }
+
+    /* .book-container #MainNav {
+        display: none;
+    } */
+
+
+
+
+    .book-container #FirstPage {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .book-container #FirstPage section {
+        flex-direction: column;
+        position: unset;
+        gap: 0;
+        justify-self: center;
+        height: 80vh;
+        width: 100%;
+    }
+
+    .book-container #FirstPage section::after {
+        display: none;
+    }
+
+    .book-container #FirstPage section .slideshow-container,
+    .book-container #FirstPage section .slideshow-container .slides,
+    .book-container #FirstPage section .slideshow-container .slides img {
+        gap: 0;
+        height: 95%;
+        justify-self: center;
+        width: 90%;
+    }
+
+    .book-container #FirstPage section .slideshow-container {
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .book-container #FirstPage section .slide-control {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .book-container #FirstPage section .thumbnail-container {
+        flex-direction: row;
+    }
+
+    .book-container #FirstPage aside {
+        margin: 0;
+    }
+
+    .book-container #FirstPage aside .social {
+        justify-content: center;
+    }
+
+    .book-container #FirstPage aside .heading h1 {
+        margin: 5% 0;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .book-container #FirstPage aside .buttons button {
+        padding: 8px 15px;
+        font-size: .9rem;
+    }
+
+    .book-container #FirstPage aside .highlights {
+        margin: 5% 0;
+        gap: 10px;
+    }
+
+    .book-container #FirstPage aside .highlights nav {
+        gap: 15px;
+    }
+
+    .book-container #FirstPage aside .highlights nav .items img {
+        width: 35px;
+    }
+
+    .book-container #FirstPage aside .highlights .items span,
+    .book-container #FirstPage aside .highlights .items p {
+        font-size: 10px;
+    }
+
+    .book-container #SecondPage .slides {
+        min-width: 100%;
+        /*Adjust for one slide visible on smaller screens*/
+        gap: 0;
+
+
+    }
+
+    .book-container #SecondPage .slide {
+        min-width: max-content;
+        padding: 25px 0;
+    }
+
+    .book-container #SecondPage,
+    .book-container #ThirdPage,
+    .book-container #FourthPage,
+    .book-container footer {
+        gap: 5%;
+        padding: 25px 5%;
+    }
+
+    .book-container #ThirdPage span {
+        font-size: 12px;
+    }
+
+    .book-container #ThirdPage aside {
+        gap: 0;
+    }
+
+    .book-container #FourthPage {
+        gap: 25px;
+    }
+
+    .book-container #FourthPage section {
+        flex-direction: column;
+    }
+
+    .book-container #FourthPage .heading {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-container #FourthPage .heading button {
+        padding: 8px 35px;
+        margin: 2% 0;
+    }
+
+    .book-container #FourthPage section .rating {
+        flex-direction: column;
+    }
+
+    .book-container #FourthPage .overall {
+        width: 90%;
+        grid-template-columns: auto;
+    }
+
+    .book-container #FourthPage #ratingContainer {
+        margin-top: 0;
+    }
+
+    .book-container #FourthPage aside .comments {
+        margin-top: 10%;
+        width: 100%;
+    }
+
+
+    /*footer css */
+    /* .book-container footer {
+        display: block;
+        padding: 10% 10%;
+    }
+
+    .book-container footer .intro,
+    .book-container footer .address,
+    .book-container footer .UsefulLinks,
+    .book-container footer .SocialMedia,
+    .book-container footer .otherWebsites,
+    .book-container footer .social {
+        margin-bottom: 1rem;
+    }
+
+    .book-container footer .accordion-checkbox {
+        display: none;
+    }
+
+    .book-container footer .accordion-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: #009688;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .book-container footer .accordion-content {
+        display: none;
+        padding: 1rem;
+        background: #171616;
+    }
+
+    .book-container footer .accordion-checkbox:checked+.accordion-label+.accordion-content {
+        display: block;
+    }
+
+    .book-container footer img {
+        width: 60%;
+        align-self: center;
+    }
+
+    .book-container footer h3 {
+        text-align: justify;
+        margin: 10px 0;
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .book-container footer div.links {
+        display: none;
+    }
+
+    .book-container footer input:checked~div.links {
+        display: flex;
+    }
+
+    .book-container footer input~label h3 i:nth-child(2) {
+        display: none;
+    }
+
+    .book-container footer input:checked~label h3 i:nth-child(2) {
+        display: flex;
+    }
+
+    .book-container footer input:checked~label h3 i:nth-child(1) {
+        display: none;
+    }
+
+    .book-container footer .social {
+        margin: 0;
+    }
+
+    .book-container footer .social .links {
+        gap: 10px;
+    }
+
+    .book-container footer label {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .book-container footer h3 i {
+        transform: scale(1);
+    }
+
+    .book-container footer .address span.location {
+        display: flex;
+    }
+
+    .book-container footer .address span.location i {
+        margin: 0 0px;
+        margin-left: 5px;
+    }
+
+    .book-container .rights span {
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.book-container a {
+    text-decoration: none;
+}
+
+/* NavBar */
+.book-container #MainNav {
+    background: #f8f8f8;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+    position: sticky;
+    top: 0;
+    padding: 15px 75px;
+    z-index: 999;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.book-container #MainNav .logo img {
+    width: 40%;
+    user-select: none;
+}
+
+.book-container #MainNav .navMiddle {
+    width: 40%;
+    background: white;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+.book-container #MainNav .navMiddle:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-container #MainNav .navMiddle input {
+    width: 90%;
+    margin-left: 20px;
+    font-size: 14px;
+    border: none;
+}
+
+.book-container #MainNav .navMiddle a {
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+    height: 100%;
+    width: 10%;
+    border-radius: 25px;
+    background: #1A1AFF;
+    color: white;
+}
+
+.book-container #MainNav .navRight {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-container #MainNav .navRight select,
+.book-container #MainNav .navRight select option {
+    padding: 5px 10px;
+}
+
+.book-container #MainNav .navRight select {
+    border-radius: 5px;
+}
+
+.book-container #MainNav .navRight .cart,
+.book-container #MainNav .navRight .user,
+.book-container #MainNav .navRight .favourite {
+    font-size: 25px;
+    margin: 0 10px;
+    color: #000;
+}
+
+.book-container #MainNav .navRight .cart {
+    filter: drop-shadow(0 0 1px black);
+    color: #eeeeee;
+}
+.book-container #MainNav .navRight .favourite {
+    position: relative;
+}
+
+.book-container #MainNav .navRight .favourite::after {
+    content: attr(data-increment);
+    color: white;
+    font-size: 12px;
+    top: 0px;
+    right: -8px;
+    padding: 1px 8px;
+    border-radius: 25px;
+    background: red;
+    position: absolute;
+    transform: scale(0);
+}
+
+.book-container #MainNav .navRight .favourite.show::after {
+    display: flex;
+    transform: scale(1);
+
+}
+
+.book-container #MainNav .navRight .favourite.hide::after {
+    display: none;
+}
+.book-container #MainNav .navRight .cart ::after {
+    position: absolute;
+    content: '1';
+    color: white;
+    font-size: 12px;
+    top: 0;
+    right: -15%;
+    padding: 2px 5px;
+    border-radius: 25px;
+    background: #1A1AFF;
+}
+
+.book-container #MainNav .navRight .user {
+    color: black;
+    border: 1px solid #111;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 1px 7px;
+}
+
+.book-container #MainNav .navRight .cart:hover {
+    color: black;
+    filter: drop-shadow(0 0 0);
+}
+
+.book-container #MainNav .navRight .user:hover {
+    border: 1px solid rgba(0, 0, 0, 0.288);
+}
+
+.book-container #MainNav .navRight .user:hover,
+.book-container #MainNav .navRight .favourite:hover {
+    color: rgba(0, 0, 0, 0.288);
+}
+
+/* Popup Container */
+.book-container .popup-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.book-container .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+}
+.book-container .popup-content img{
+    width: 30%;
+}
+
+.book-container .popup-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px
+}
+
+.book-container .popup-image {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.book-container .author-name {
+    font-size: 18px;
+    color: #333;
+}
+
+@media (max-width: 1024px) {
+    /* Adjust padding and margins for smaller screens */
+    .book-container  .popup-content {
+        width: 90%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    .book-container  .popup-content .close {
+        top: 5px;
+        right: 5px;
+        font-size: 20px;
+    }
+
+    .book-container .author-name {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Further adjustments for even smaller screens */
+    .book-container .popup-content {
+        width: 95%;
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    .book-container .popup-content .close {
+        top: 0;
+        right: 0;
+        font-size: 18px;
+    }
+
+    .book-container  .author-name {
+        font-size: 14px;
+    }
+}
+
+
+/* Main Page */
+
+
+.book-container #FirstPage {
+    display: flex;
+    width: 100%;
+    background: white;
+    z-index: 0;
+    padding: .2% 3%;
+    gap: 45px;
+}
+
+.book-container #FirstPage section {
+    width: 50%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    flex-direction: row-reverse;
+    position: relative;
+    z-index: 2;
+}
+
+.book-container #FirstPage section::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 50%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right: 4px solid #e9e9e9;
+    z-index: 1;
+    border-radius: 25px;
+}
+
+.book-container #FirstPage section .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    width: 50%;
+    height: 80vh;
+    align-items: center;
+    text-align: center;
+}
+
+.book-container #FirstPage section .slides {
+    display: none;
+    width: 70vh;
+}
+
+.book-container #FirstPage section .slides img {
+    width: 100%;
+    height: 70vh;
+}
+
+.book-container #FirstPage section .slide-control {
+    height: 60vh;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.book-container #FirstPage section .prev,
+.book-container #FirstPage section .next {
+    padding: 75px 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.book-container #FirstPage section .prev {
+    left: 0;
+}
+
+.book-container #FirstPage section .next {
+    position: absolute;
+    right: 0;
+}
+
+.book-container #FirstPage section .slide-control span {
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.book-container #FirstPage section .prev:hover,
+.book-container #FirstPage section .next:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.book-container #FirstPage section .thumbnail-container {
+    text-align: center;
+    margin-top: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-container #FirstPage section .thumbnail {
+    height: 80px;
+    cursor: pointer;
+    margin: 0 2px;
+    transition: 0.3s;
+}
+
+.book-container #FirstPage section .thumbnail:hover {
+    opacity: 0.7;
+}
+
+.book-container #FirstPage section .active {
+    border: 1px solid #000;
+}
+
+/* Right Front Page */
+.book-container #FirstPage aside {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    width: 100%;
+    margin: 0 45px;
+    gap: 5%;
+}
+
+.book-container #FirstPage aside .social {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap: 20px;
+    font-size: 25px;
+}
+.book-container #FirstPage aside .social div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.book-container #FirstPage aside .social div span{
+    font-size: small;
+}
+
+.book-container #FirstPage aside .social a {
+    background: #000;
+    border-radius: 50%;
+    padding: 6px 12px;
+    margin: 0;
+}
+.book-container #FirstPage aside .social .share {
+    color: white;
+    background: gray;
+}
+
+.book-container #FirstPage aside .social .share:hover {
+    color: gray;
+    background: white;
+}
+
+.book-container #FirstPage aside .social .favourite:hover {
+    background: white;
+    color: red;
+}
+
+.book-container #FirstPage aside .social .favourite {
+    background: red;
+    color: white;
+}
+
+.book-container #FirstPage aside .social a:hover {
+    filter: drop-shadow(0 0 2px #585858);
+}
+
+.book-container #FirstPage aside .heading h1 {
+    font-size: 1.6rem;
+}
+
+.book-container #FirstPage aside .buttons {
+    display: flex;
+    gap: 10%;
+}
+
+.book-container #FirstPage aside .buttons button {
+    padding: 15px 45px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: #1A1AFF solid 3px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.book-container #FirstPage aside .buttons button:hover {
+    background: #1A1AFF;
+    color: white;
+}
+
+.book-container #FirstPage .highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.book-container #FirstPage aside .highlights nav {
+    display: flex;
+    width: 80%;
+    gap: 25px;
+}
+
+.book-container #FirstPage aside .highlights nav .items img {
+    width: 45px;
+    padding: 5px;
+}
+
+.book-container #FirstPage aside .highlights .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.book-container #FirstPage aside .highlights .items span {
+    font-size: 12px;
+    text-align: center;
+}
+
+.book-container #FirstPage aside .highlights .items p {
+    font-size: 13px;
+    color: gray;
+}
+
+
+/* Second Page */
+
+.book-container #SecondPage,
+.book-container #ThirdPage,
+.book-container #FourthPage {
+    width: 100%;
+    margin-top: 2%;
+    background: white;
+    padding: 1% 5%;
+}
+
+.book-container #SecondPage nav {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid gray;
+}
+
+.book-container #SecondPage nav a {
+    padding: 1% 8%;
+    margin: 0;
+    text-align: center;
+    color: black;
+}
+
+.book-container #SecondPage nav a:nth-child(1) {
+    border-bottom: 1px solid green;
+}
+
+.book-container #SecondPage section h3 {
+    margin: 1% 0;
+}
+
+.book-container .book-container #SecondPage section span {
+    color: limegreen;
+    cursor: pointer;
+    user-select: none;
+}
+
+.book-container #SecondPage aside {
+    border-bottom: 1px solid gray;
+}
+
+.book-container #SecondPage aside .heading span {
+    font-size: 14px;
+    color: cadetblue;
+    font-weight: 500;
+}
+
+.book-container #SecondPage .slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    max-height: 60vh;
+    height: 70%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.book-container #SecondPage .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(200% / 2);
+}
+
+.book-container #SecondPage .slide {
+    min-width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+.book-container #SecondPage .slide img {
+    width: fit-content;
+    max-height: 60vh;
+    height: 88%;
+}
+
+.book-container #SecondPage .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: gray;
+    border: 1px solid gray;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.book-container #SecondPage .prev {
+    left: 10px;
+}
+
+.book-container #SecondPage .next {
+    right: 10px;
+}
+
+.book-container #ThirdPage section .author-card {
+    margin: 1% 0;
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    max-width: 300px;
+}
+
+.book-container #ThirdPage section .author-card img {
+    max-width: 115px;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.book-container #ThirdPage section .author-card .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.book-container #ThirdPage section .author-card .details i {
+    color: gold;
+}
+
+.book-container #ThirdPage section .author-card .details button {
+    padding: 4px 5px;
+    border-radius: 5px;
+    color: green;
+    font-weight: 700;
+    border: 2px solid green;
+    background: transparent;
+    cursor: pointer;
+}
+
+.book-container #ThirdPage section .author-card .details button:hover {
+    background: green;
+    color: white;
+}
+
+.book-container #ThirdPage .description {
+    font-size: 14px;
+}
+
+.book-container #ThirdPage aside,
+.book-container .Recommendation aside {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.book-container #ThirdPage aside .productSlider,
+.book-container .Recommendation .productSlider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    max-height: 60vh;
+    height: 70%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.book-container #ThirdPage .sliderContainer,
+.book-container .Recommendation .sliderContainer {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.book-container #ThirdPage .sliderContainer .information,
+.book-container .Recommendation .sliderContainer .information {
+    font-size: 12px;
+}
+
+.book-container #ThirdPage .sliderContainer img,
+.book-container .Recommendation .sliderContainer img {
+    width: 175px;
+    height: 175px;
+}
+
+.book-container #ThirdPage .sliderContainer nav,
+.book-container .Recommendation .sliderContainer nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.book-container #ThirdPage .control,
+.book-container .Recommendation .control {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+#ThirdPage .control:hover,
+.book-container .Recommendation .control:hover {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+
+.book-container #ThirdPage .productCount,
+.book-container .Recommendation .productCount {
+    font-size: 14px;
+    align-self: flex-end;
+}
+
+
+
+/* Fourth Page */
+
+.book-container #FourthPage .heading {
+    margin-bottom: 2%;
+}
+
+.book-container #FourthPage .heading button {
+    padding: 10px 45px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.book-container #FourthPage .heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-container #FourthPage section .rating {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.book-container #FourthPage .overall {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 30% 60%;
+    column-gap: 5%;
+}
+
+
+
+.book-container #FourthPage .stars {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    column-gap: 1rem;
+}
+
+.book-container #FourthPage .rating .all-Rating {
+    padding: 25px 0;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.book-container #FourthPage .star-rating .star {
+    font-size: 1.2rem;
+}
+
+.book-container #FourthPage .star-rating p:last-child {
+    width: 10%;
+}
+
+.book-container #FourthPage .progressRating {
+    flex: 1 1 0;
+    height: .5rem;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+}
+
+.book-container #FourthPage .progressRating .bar {
+    height: 100%;
+    background: #36bd36;
+    border-radius: 25px;
+}
+
+
+.book-container #FourthPage .rate {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+}
+
+.book-container #FourthPage #ratingContainer {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+
+.book-container #FourthPage .star-rating .fa-star {
+    font-size: 2rem;
+    color: lightgray;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.book-container #FourthPage .star-rating .fa-star:hover,
+.book-container #FourthPage .star-rating .fa-star:hover~.fa-star {
+    color: #ffcc00;
+}
+
+.book-container #FourthPage .star-rating .fa-star.selected,
+.book-container #FourthPage .star-rating .fa-star.selected~.fa-star {
+    color: #ffcc00;
+}
+
+.book-container #FourthPage aside .CommentHeading span:nth-child(1) span {
+    padding: unset;
+}
+
+.book-container #FourthPage aside .CommentHeading span:nth-child(1) {
+    background: #36bd36;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.book-container #FourthPage aside .commentText {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.book-container #FourthPage aside .commentText .aboutWriter {
+    color: #007BFF;
+}
+
+.book-container #FourthPage aside .comments .comment {
+    border-bottom: 1px solid gray;
+    margin: 10px;
+}
+
+.book-container #FourthPage aside .comments {
+    width: 50%;
+}
+
+.book-container #FourthPage aside .comments i {
+    color: #007BFF;
+}
+
+.book-container #FourthPage aside .comments .time {
+    color: #6c757d;
+}
+
+.book-container .show-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.book-container .show-more:hover {
+    background-color: #0056b3;
+}
+
+/* Default styles (without media query) */
