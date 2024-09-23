@@ -76,7 +76,7 @@ const SecondPage = ({book}) => {
         <h3>Description</h3>
         {/**book description truncation logic  */}
         <p id="Description">
-          {isReadMore ? book.bookDescription.slice(0, visibleTextLength) + '...' :book.bookDescription}
+          {isReadMore ? book?.bookDescription.slice(0, visibleTextLength) + '...' :book?.bookDescription}
         </p>
         <span style={{color:'blue'}} onClick={toggleReadMore}>
           {isReadMore ? 'Read More' : 'Read Less'}
@@ -95,21 +95,21 @@ const SecondPage = ({book}) => {
           <div className="slides" ref={slidesContainerRef}>
             <div className="slide" ref={(el) => (slidesRef.current[0] = el)}>
               <img
-                src={book.popularBooks[0]}
+                src={book?.popularBooks[0]}
                 alt="Image 1"
               />
             </div>
             <div className="slide" ref={(el) => (slidesRef.current[1] = el)}>
-              <img  src={book.popularBooks[1]} alt="Image 2" />
+              <img  src={book?.popularBooks[1]} alt="Image 2" />
             </div>
             <div className="slide" ref={(el) => (slidesRef.current[2] = el)}>
               <img
-                 src={book.popularBooks[2]}
+                 src={book?.popularBooks[2]}
                 alt="Image 3"
               />
             </div>
             <div className="slide" ref={(el) => (slidesRef.current[3] = el)}>
-              <img  src={book.popularBooks[3]} alt="Image 4" />
+              <img  src={book?.popularBooks[3]} alt="Image 4" />
             </div>
             {/* Add more slides as needed */}
           </div>

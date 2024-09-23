@@ -68,13 +68,13 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
       <section>
         <div className="slideshow-container">
           <div className="slides">
-            <img src={book.coverImages[0]} alt="Book 1" />
+            <img src={book?.coverImages[0]} alt="Book 1" />
           </div>
           <div className="slides">
-            <img src={book.coverImages[1]} alt="Book 2" />
+            <img src={book?.coverImages[1]} alt="Book 2" />
           </div>
           <div className="slides">
-            <img src={book.coverImages[2]} alt="Book 3" />
+            <img src={book?.coverImages[2]} alt="Book 3" />
           </div>
           <div className="slide-control">
             <a className="prev" onClick={() => plusSlides(-1)}>
@@ -88,19 +88,19 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
         <div className="thumbnail-container">
           <img
             className="thumbnail"
-            src={book.coverImages[0]}
+            src={book?.coverImages[0]}
             onClick={() => currentSlide(1)}
             alt="Book 1"
           />
           <img
             className="thumbnail"
-            src={book.coverImages[1]}
+            src={book?.coverImages[1]}
             onClick={() => currentSlide(2)}
             alt="Book 2"
           />
           <img
             className="thumbnail"
-            src={book.coverImages[2]}
+            src={book?.coverImages[2]}
             onClick={() => currentSlide(3)}
             alt="Book 3"
           />
@@ -129,7 +129,7 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
         {/*heading */}
         <div className="heading">
           <h1>
-         { book.title}
+         { book?.title}
           </h1>
         </div>
 
@@ -151,18 +151,18 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
           <nav>
             <div className="items">
               <img src="/Book/images/language.svg" alt="Language" />
-              <span>{book.language}</span>
+              <span>{book?.language}</span>
               <p>Language</p>
             </div>
             <div className="items">
               <img src="/Book/images/paper.svg" alt="Pages" />
-              <span>{book.pages}</span>
+              <span>{book?.pages}</span>
               <p>Pages</p>
             </div>
            
             <div className="items">
               <img src="/Book/images/calendar.svg" alt="Calendar" />
-              <span>{formatDate(book.createdAt)}</span>
+              <span>{formatDate(book?.createdAt)}</span>
               <p>Publish Date</p>
             </div>
           </nav>

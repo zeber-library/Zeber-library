@@ -23,11 +23,7 @@ const Book = () => {
   const [favCount, setFavCount] = useState(123232); // Initial likes count
   const [showPopup, setShowPopup] = useState(false); // Manage popup visibility
 const location = useLocation();
-const { book } = location.state || {};  // Add fallback to avoid errors if no state is passed
-console.log(book);
-if (!book) {
-  return <div>No book details available</div>;
-}
+const { book } = location.state || {}  // Add fallback to avoid errors if no state is passed
   // Function to toggle the popup
   const togglePopup = () => {
     //perform togglePopup only when the isLiked is true
@@ -52,7 +48,7 @@ if (!book) {
         setIsLiked={setIsLiked}
         setFavCount={setFavCount}
         favCount={favCount}
-      book={book}
+        book={book}
       />
 
       {/*Second Page  */}

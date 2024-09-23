@@ -101,7 +101,7 @@ const ThirdPage = ({book}) => {
         <div className="author-card">
           <img src="/Book/images/author.jpg" alt="Image of Author" />
           <div className="details">
-            <h4>{book.author}</h4>
+            <h4>{book?.author}</h4>
             <div className="cardRating">
               <i className="fa fa-star"></i>
               <i className="fa fa-star"></i>
@@ -119,7 +119,7 @@ const ThirdPage = ({book}) => {
 
         
         <div className="description">
-           {book.authorDescription}
+           {book?.authorDescription}
         </div>
       </section>
 

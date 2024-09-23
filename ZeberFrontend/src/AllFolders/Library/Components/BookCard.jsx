@@ -23,7 +23,7 @@ const BookCard = ({
       </div>
       {trending ? null : (
         <div className="button">
-          <Link to="/book">
+          <Link to="/book" state={{book}}>
             <button>Available</button>
           </Link>
         </div>
