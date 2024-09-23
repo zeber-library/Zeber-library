@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const FirstPage = ({  setIsLiked, setFavCount, favCount }) => {
+const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
   // State to manage the current slide index in the slideshow
   const [slideIndex, setSlideIndex] = useState(1);
 
@@ -20,7 +20,11 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount }) => {
   const currentSlide = (n) => {
     setSlideIndex(n);
   };
-
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const date = new Date(dateString);
+    return date.toLocaleDateString(undefined, options);
+  };
   // Function to show the slides based on the current index
   const showSlides = (n) => {
     let slides = document.querySelectorAll("#FirstPage .slides");
@@ -64,13 +68,13 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount }) => {
       <section>
         <div className="slideshow-container">
           <div className="slides">
-            <img src="/Book/images/1154308-M.jpg" alt="Book 1" />
+            <img src={book.coverImages[0]} alt="Book 1" />
           </div>
           <div className="slides">
-            <img src="/Book/images/123863-M.jpg" alt="Book 2" />
+            <img src={book.coverImages[1]} alt="Book 2" />
           </div>
           <div className="slides">
-            <img src="/Book/images/14638562-M.jpg" alt="Book 3" />
+            <img src={book.coverImages[2]} alt="Book 3" />
           </div>
           <div className="slide-control">
             <a className="prev" onClick={() => plusSlides(-1)}>
@@ -84,19 +88,19 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount }) => {
         <div className="thumbnail-container">
           <img
             className="thumbnail"
-            src="/Book/images/1154308-M.jpg"
+            src={book.coverImages[0]}
             onClick={() => currentSlide(1)}
             alt="Book 1"
           />
           <img
             className="thumbnail"
-            src="/Book/images/123863-M.jpg"
+            src={book.coverImages[1]}
             onClick={() => currentSlide(2)}
             alt="Book 2"
           />
           <img
             className="thumbnail"
-            src="/Book/images/14638562-M.jpg"
+            src={book.coverImages[2]}
             onClick={() => currentSlide(3)}
             alt="Book 3"
           />
@@ -125,7 +129,7 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount }) => {
         {/*heading */}
         <div className="heading">
           <h1>
-            Verity: The Thriller That Will Capture Your Heart And Blow Your Mind
+         { book.title}
           </h1>
         </div>
 
@@ -147,27 +151,18 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount }) => {
           <nav>
             <div className="items">
               <img src="/Book/images/language.svg" alt="Language" />
-              <span>ENGLISH</span>
+              <span>{book.language}</span>
               <p>Language</p>
             </div>
             <div className="items">
               <img src="/Book/images/paper.svg" alt="Pages" />
-              <span>336</span>
+              <span>{book.pages}</span>
               <p>Pages</p>
             </div>
-            <div className="items">
-              <img src="/Book/images/barcode.svg" alt="Barcode" />
-              <span>8976553215464</span>
-              <p>ISBN</p>
-            </div>
-            <div className="items">
-              <img src="/Book/images/binding.svg" alt="Binding" />
-              <span>PAPERBACK</span>
-              <p>Binding</p>
-            </div>
+           
             <div className="items">
               <img src="/Book/images/calendar.svg" alt="Calendar" />
-              <span>2022</span>
+              <span>{formatDate(book.createdAt)}</span>
               <p>Publish Date</p>
             </div>
           </nav>

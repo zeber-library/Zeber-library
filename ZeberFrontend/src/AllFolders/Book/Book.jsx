@@ -15,15 +15,19 @@ import Header from "./Components/Header";
 import FourthPage from "./Components/FourthPage";
 import Footer from "../Footer/Footer";
 import "./book.css";
-
-
+import { useLocation } from 'react-router-dom';
 
 const Book = () => {
   // State for managing the 'isLiked' functionality
   const [isLiked, setIsLiked] = useState(false);
   const [favCount, setFavCount] = useState(123232); // Initial likes count
   const [showPopup, setShowPopup] = useState(false); // Manage popup visibility
-
+const location = useLocation();
+const { book } = location.state || {};  // Add fallback to avoid errors if no state is passed
+console.log(book);
+if (!book) {
+  return <div>No book details available</div>;
+}
   // Function to toggle the popup
   const togglePopup = () => {
     //perform togglePopup only when the isLiked is true
@@ -48,13 +52,14 @@ const Book = () => {
         setIsLiked={setIsLiked}
         setFavCount={setFavCount}
         favCount={favCount}
+      book={book}
       />
 
       {/*Second Page  */}
-      <SecondPage />
+      <SecondPage book={book} />
 
       {/*ThirdPage */}
-      <ThirdPage />
+      <ThirdPage book={book} />
 
       {/*FourthPage */}
       <FourthPage />

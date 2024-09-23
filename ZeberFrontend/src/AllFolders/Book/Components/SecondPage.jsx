@@ -2,16 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 
 //! Component to display book details and a slider for popular highlights
 //!showing description of the book 
-const SecondPage = () => {
+const SecondPage = ({book}) => {
   // for toggling the read more 
   const [isReadMore, setIsReadMore] = useState(true);
   //text will be visible by default 
   const visibleTextLength = 350;
-
-  //text description of the book ---- will come from the backend 
-  const fullText =
-    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam vel ut, temporibus pariatur reiciendis nihil laudantium quos totam voluptates laborum sit repellendus excepturi exercitationem, ipsum maxime repudiandae molestias, incidunt tempore ea ab. Minus voluptate quasi sunt fugiat. Temporibus facere animi, in debitis eligendi hic cum aliquam ullam aperiam? Necessitatibus, accusamus corporis ea vitae consequatur tempore quaerat neque! Minus, voluptatibus quod dolorem velit porro voluptatum fuga esse, voluptate at, architecto hic dignissimos vel. Dolorum, fuga non?';
-
+  
 
   //function to toggle the read more state --true /false 
   const toggleReadMore = () => {
@@ -72,17 +68,17 @@ const SecondPage = () => {
   return (
     <div id="SecondPage">
       <nav>
-        <a href="#">Details</a>
-        <a href="#author">Author</a>
-        <a href="#FourthPage">Reviews</a>
+        <a href="">Details</a>
+        <a href="">Author</a>
+        <a href="">Reviews</a>
       </nav>
       <section>
         <h3>Description</h3>
         {/**book description truncation logic  */}
         <p id="Description">
-          {isReadMore ? fullText.slice(0, visibleTextLength) + '...' : fullText}
+          {isReadMore ? book.bookDescription.slice(0, visibleTextLength) + '...' :book.bookDescription}
         </p>
-        <span className="toggleReadMore" onClick={toggleReadMore}>
+        <span style={{color:'blue'}} onClick={toggleReadMore}>
           {isReadMore ? 'Read More' : 'Read Less'}
         </span>
       </section>
@@ -99,21 +95,21 @@ const SecondPage = () => {
           <div className="slides" ref={slidesContainerRef}>
             <div className="slide" ref={(el) => (slidesRef.current[0] = el)}>
               <img
-                src="/Book/images/top-view-spiral-notepad-yellow-pencil-black.jpg"
+                src={book.popularBooks[0]}
                 alt="Image 1"
               />
             </div>
             <div className="slide" ref={(el) => (slidesRef.current[1] = el)}>
-              <img src="/Book/images/v797-nunoon-10.jpg" alt="Image 2" />
+              <img  src={book.popularBooks[1]} alt="Image 2" />
             </div>
             <div className="slide" ref={(el) => (slidesRef.current[2] = el)}>
               <img
-                src="/Book/images/top-view-spiral-notepad-yellow-pencil-black.jpg"
+                 src={book.popularBooks[2]}
                 alt="Image 3"
               />
             </div>
             <div className="slide" ref={(el) => (slidesRef.current[3] = el)}>
-              <img src="/Book/images/v797-nunoon-10.jpg" alt="Image 4" />
+              <img  src={book.popularBooks[3]} alt="Image 4" />
             </div>
             {/* Add more slides as needed */}
           </div>

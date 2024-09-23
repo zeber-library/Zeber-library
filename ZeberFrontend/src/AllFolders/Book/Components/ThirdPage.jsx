@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-const ThirdPage = () => {
+const ThirdPage = ({book}) => {
   const [products, setProducts] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const productsPerScroll = window.innerWidth <= 768 ? 2 : 6;
@@ -101,7 +101,7 @@ const ThirdPage = () => {
         <div className="author-card">
           <img src="/Book/images/author.jpg" alt="Image of Author" />
           <div className="details">
-            <h4>Colleen Hoover</h4>
+            <h4>{book.author}</h4>
             <div className="cardRating">
               <i className="fa fa-star"></i>
               <i className="fa fa-star"></i>
@@ -119,7 +119,7 @@ const ThirdPage = () => {
 
         
         <div className="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut fugit distinctio minima, maiores libero sit culpa et velit! Dicta, ex. Ab ipsam aperiam consequuntur molestias repudiandae obcaecati expedita nemo doloremque.
+           {book.authorDescription}
         </div>
       </section>
 
