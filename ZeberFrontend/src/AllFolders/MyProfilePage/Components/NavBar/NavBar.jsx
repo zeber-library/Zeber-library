@@ -35,25 +35,25 @@ const NavBar = ({ toggleNavBar }) => { // Accept toggleNavBar as a prop
             <nav className='MainSideBar'>
                 <ul>
                     <li>
-                        <Link to="/myorders" onClick={handleLinkClick}><FontAwesomeIcon icon={faBox} /> My Orders</Link>
+                        <Link to="/library-profile/myorders" onClick={handleLinkClick}><FontAwesomeIcon icon={faBox} /> My Orders</Link>
                     </li>
                     <li>
-                        <Link to="/edit-profile" onClick={handleLinkClick}><FontAwesomeIcon icon={faAddressCard} /> Edit Profile</Link>
+                        <Link to="/library-profile/edit-profile" onClick={handleLinkClick}><FontAwesomeIcon icon={faAddressCard} /> Edit Profile</Link>
                     </li>
                     <li>
-                        <Link to="/address" onClick={handleLinkClick}><FontAwesomeIcon icon={faHouse} /> Edit Address</Link>
+                        <Link to="/library-profile/address" onClick={handleLinkClick}><FontAwesomeIcon icon={faHouse} /> Edit Address</Link>
                     </li>
                     {/* <li>
                         <Link to="/payment" onClick={handleLinkClick}><FontAwesomeIcon icon={faBuildingColumns} />Payment Methods</Link>
                     </li> */}
                     <li>
-                        <Link to="/gifts" onClick={handleLinkClick}><FontAwesomeIcon icon={faTicket} />Gift cards & vouchers</Link>
+                        <Link to="/library-profile/gifts" onClick={handleLinkClick}><FontAwesomeIcon icon={faTicket} />Gift cards & vouchers</Link>
                     </li>
                     <li>
-                        <Link to="/help" onClick={handleLinkClick}><FontAwesomeIcon icon={faCircleQuestion} /> Need help?</Link>
+                        <Link to="/library-profile/help" onClick={handleLinkClick}><FontAwesomeIcon icon={faCircleQuestion} /> Need help?</Link>
                     </li>
                     <li>
-                        <Link to="/" onClick={handleLinkClick}><FontAwesomeIcon icon={faArrowRightFromBracket} />Sign Out</Link>
+                        <Link to="/library-profile" onClick={handleLinkClick}><FontAwesomeIcon icon={faArrowRightFromBracket} />Sign Out</Link>
                     </li>
                 </ul>
             </nav>

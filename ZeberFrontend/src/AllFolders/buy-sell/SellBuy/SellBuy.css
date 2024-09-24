@@ -1,0 +1,148 @@
+.container-sell-buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-top: 5%;
+}
+
+.container-sell-buy .card-sell-buy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: 450px;
+  background-color: #E7E7FF;
+  border-radius: 10px;
+  margin: 10px; /* Adjust margin for better spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-sell-buy .card-sell-buy:nth-child(3) {
+  background-color: #FFF2C6;
+}
+
+.container-sell-buy .icon-sell-buy img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.container-sell-buy .action-btn-sell-buy {
+  background-color: #e0f3ff;
+  color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.container-sell-buy .or {
+  font-size: 18px;
+  color: #555;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #F1F1F1;
+  padding-top: 12px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .container-sell-buy .card-sell-buy {
+    width: 400px; /* Adjust width for large tablets and smaller screens */
+    height: 400px; /* Adjust height */
+  }
+
+  .container-sell-buy .icon-sell-buy img {
+    width: 250px; /* Adjust image size */
+    height: 250px; /* Adjust image size */
+  }
+
+  .container-sell-buy .action-btn-sell-buy {
+    font-size: 14px; /* Adjust button font size */
+    padding: 8px 16px; /* Adjust padding */
+  }
+
+  .container-sell-buy .or {
+    font-size: 16px; /* Adjust font size */
+    height: 40px; /* Adjust size */
+    width: 40px; /* Adjust size */
+  }
+}
+
+@media (max-width: 992px) {
+  .container-sell-buy .container-sell-buy {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: stretch; /* Stretch cards to fit container */
+  }
+
+  .container-sell-buy  .card-sell-buy {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Adjust height automatically */
+    margin: 10px 0; /* Margin for vertical spacing */
+  }
+
+  .container-sell-buy  .icon-sell-buy img {
+    width: 200px; /* Adjust image size */
+    height: 200px; /* Adjust image size */
+  }
+
+  .container-sell-buy  .action-btn-sell-buy {
+    font-size: 14px; /* Adjust button font size */
+    padding: 8px 16px; /* Adjust padding */
+  }
+
+  .container-sell-buy .or {
+    font-size: 14px; /* Adjust font size */
+    height: 40px; /* Adjust size */
+    width: 40px; /* Adjust size */
+  }
+}
+
+@media (max-width: 768px) {
+  .container-sell-buy  .card-sell-buy {
+    width: 100%; /* Full width for mobile screens */
+    height: auto; /* Adjust height automatically */
+    margin: 10px 0; /* Margin for vertical spacing */
+  }
+
+  .container-sell-buy  .icon-sell-buy img {
+    width: 150px; /* Adjust image size */
+    height: 150px; /* Adjust image size */
+  }
+
+  .container-sell-buy .action-btn-sell-buy {
+    font-size: 12px; /* Adjust button font size */
+    padding: 6px 12px; /* Adjust padding */
+  }
+
+  .container-sell-buy  .or {
+    font-size: 12px; /* Adjust font size */
+    height: 30px; /* Adjust size */
+    width: 30px; /* Adjust size */
+  }
+}
+
+@media (max-width: 576px) {
+  .container-sell-buy .icon-sell-buy img {
+    width: 100px; /* Adjust image size */
+    height: 100px; /* Adjust image size */
+  }
+
+  .container-sell-buy  .action-btn-sell-buy {
+    font-size: 12px; /* Adjust button font size */
+    padding: 4px 8px; /* Adjust padding */
+  }
+
+  .container-sell-buy  .or {
+    font-size: 10px; /* Adjust font size */
+    height: 25px; /* Adjust size */
+    width: 25px; /* Adjust size */
+  }
+}

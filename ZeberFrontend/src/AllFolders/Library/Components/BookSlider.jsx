@@ -1,27 +1,25 @@
-import React, { useRef,useState,useEffect } from "react";
+import React, { useRef } from "react";
 import BookCard from "./BookCard";
 import SwiperComponent from './SwiperComponent';
 
 
-
-
+//Array of books
+//this array will come from backend -- to be handle dynamically 
+const bookImages = [
+  { image: "/library/image/book_343.jpg" },
+  { image: "/library/image/book_342.jpg" },
+  { image: "/library/image/book_341.jpg" },
+  { image: "/library/image/book_23.jpg" },
+  { image: "/library/image/book_3.jpg" },
+  { image: "/library/image/book_2.jpg" },
+  { image: "/library/image/book_4.jpg" },
+  { image: "/library/image/book_1.jpg" },
+  { image: "/library/image/book_9.jpg" },
+];
 
 //component 
 const BookSlider = ({ handleBookSelect }) => {
-  const [books, setBooks] = useState([]);
-  // const [bookImages, setBookImages] = useState([]);
-  useEffect(
-    ()=>{
-      //fetching the books from backend 
-      fetch("http://localhost:5000/api/getbooks")
-      .then((res)=>res.json())
-      .then((data)=>{
-        setBooks(data);
-        // setBookImages(data[0].coverImages);
-      })
-    },[]
-  )
-  // console.log(books);
+
   //ref for all the book container for sliding 
   const trendingSliderRef = useRef(null);
   const recentSliderRef = useRef(null);
@@ -83,7 +81,7 @@ const BookSlider = ({ handleBookSelect }) => {
           </div>
           <div className="slider" ref={trendingSliderRef}>
             {/*loop for each book type  */}
-            {books.map((book, index) => (
+            {bookImages.map((book, index) => (
               //Book Component 
               <BookCard
                 key={index}
@@ -119,7 +117,7 @@ const BookSlider = ({ handleBookSelect }) => {
             </div>
           </div>
           <div className="slider" ref={recentSliderRef}>
-            {books.map((book, index) => (
+            {bookImages.map((book, index) => (
               <BookCard
                 key={index}
                 book={book}
@@ -150,7 +148,7 @@ const BookSlider = ({ handleBookSelect }) => {
             </div>
           </div>
           <div className="slider" ref={beginnersSliderRef}>
-            {books.map((book, index) => (
+            {bookImages.map((book, index) => (
               <BookCard
                 key={index}
                 book={book}
@@ -181,7 +179,7 @@ const BookSlider = ({ handleBookSelect }) => {
             </div>
           </div>
           <div className="slider" ref={intermediateSliderRef}>
-            {books.map((book, index) => (
+            {bookImages.map((book, index) => (
               <BookCard
                 key={index}
                 book={book}
@@ -212,7 +210,7 @@ const BookSlider = ({ handleBookSelect }) => {
             </div>
           </div>
           <div className="slider" ref={advanceSliderRef}>
-            {books.map((book, index) => (
+            {bookImages.map((book, index) => (
               <BookCard
                 key={index}
                 book={book}

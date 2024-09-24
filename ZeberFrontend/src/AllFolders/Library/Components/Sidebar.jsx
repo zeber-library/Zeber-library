@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import {Link} from "react-router-dom"
-
 //sidebar-prop passed from the index.js
-const SidebarToggle = ({ isSidebarOpen}) => {
+const SidebarToggle = ({ isSidebarOpen }) => {
 
   useEffect(() => {
     const sidebar = document.querySelector('.sidebar');

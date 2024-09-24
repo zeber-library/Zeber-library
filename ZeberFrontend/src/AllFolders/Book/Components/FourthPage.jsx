@@ -239,7 +239,7 @@ const FourthPage = () => {
                 <p>{comment.body}</p>
                 <p className="aboutWriter">
                   {comment.user.username}{" "}
-                  <span className="time">●&nbsp; 1 month ago &nbsp;●</span>
+                  <span className="time">●&nbsp; 1 month ago &nbsp;● &nbsp;</span>
                   <span className="like">
                     <i className="fa fa-thumbs-up"></i>&nbsp;{" "}
                     <span style={{ color: "#007BFF" }}>{comment.likes}</span>
@@ -258,7 +258,7 @@ const FourthPage = () => {
 
       {/**recommendation book slider  */}
       <div className="Recommendation">
-        <h3 className="heading">Customers who read this book also read</h3>
+        <h3 className="heading">Our Recommendations</h3>
         <div className="productSlider">
           <span className="productCount"></span>
           <div className="sliderContainer">

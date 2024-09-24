@@ -227,7 +227,7 @@ const Library = () => {
       )}
 
       {/*Sidebar component  */}
-      <SidebarToggle  isSidebarOpen={isSidebarOpen}  />
+      <SidebarToggle  isSidebarOpen={isSidebarOpen} />
       <Footer/>
     </div>
   );

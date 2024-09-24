@@ -1,0 +1,104 @@
+
+.sell-container {
+  background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+  padding: 30px;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  border: 1px solid #80deea;
+}
+
+
+.sell-container h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #00796b;
+  margin-bottom: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.sell-container .form-group {
+  margin-bottom: 20px;
+}
+
+.sell-container .form-group label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #004d40;
+  margin-bottom: 8px;
+}
+
+.sell-container .form-group input[type="text"],
+.sell-container .form-group input[type="number"],
+.sell-container .form-group input[type="date"],
+.sell-container .form-group input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #b2dfdb;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sell-container .form-group input[type="text"]:focus,
+.sell-container .sell-container .form-group input[type="number"]:focus,
+.sell-container .form-group input[type="date"]:focus,
+.sell-container .form-group input[type="file"]:focus {
+  border-color: #00796b;
+  box-shadow: 0 0 5px rgba(0, 150, 136, 0.5);
+  outline: none;
+}
+
+
+.sell-container .submit-button {
+  width: 100%;
+  padding: 15px;
+  background: #00796b;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sell-container .submit-button:hover {
+  background: #004d40;
+  transform: scale(1.05);
+}
+
+
+.sell-container .preview-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.sell-container .preview-container h2 {
+  font-size: 1.2rem;
+  color: #004d40;
+  margin-bottom: 10px;
+}
+
+.sell-container .cover-preview {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #00796b;
+  border-radius: 8px;
+}
+
+
+@media (max-width: 768px) {
+ .sell-container {
+    padding: 20px;
+  }
+
+  .sell-container h1 {
+    font-size: 2rem;
+  }
+}
+

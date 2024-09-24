@@ -8,8 +8,7 @@ import Reel from "./AllFolders/Reel/Reel";
 import Library from "./AllFolders/Library/Library";
 import UploadForm from "./AllFolders/UploadBook/Form/UploadForm";
 import LibraryProfilePage from '../src/AllFolders/MyProfilePage/LibraryProfilePage';
-//import BuySellRoutes from "./AllFolders/buy-sell/BuySellRoutes";
-import HomeScreen from "./AllFolders/buy-sell/components/HomeScreen";
+import BuySellRoutes from "./AllFolders/buy-sell/BuySellRoutes";
 
 
 
@@ -46,14 +45,10 @@ function App() {
 
         {/* Book Sell Page */}
 
-        {/* <Route path="/*" element={<BuySellRoutes/>}/> */}
+        <Route path="/*" element={<BuySellRoutes/>}/>
 
         {/* My Library Profile */}
         <Route path="/library-profile/*" element={ <LibraryProfilePage/>}/>
-
-        {/* <Route path = "/buy-sell" element ={<HomeScreen/>}/> */}
-
-        <Route path = "/buy-sell" element ={<HomeScreen/>}/>
 
       </Routes>
     </BrowserRouter>

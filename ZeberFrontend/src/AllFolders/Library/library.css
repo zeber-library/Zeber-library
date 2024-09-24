@@ -2,7 +2,14 @@
 /* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+/* * {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  transition: all 0.2s ease;
 
+} */
 
 :root {
   --white-color: #fff;
@@ -47,7 +54,7 @@
 /* NavBar */
 .library-container nav.navBar {
   display: grid;
-  grid-template-columns: 10% 55% 35%;
+  grid-template-columns: 10% 45% 45%;
   height: 10vh;
   width: 100%;
   place-items: center;
@@ -75,7 +82,7 @@
 }
 
 .library-container nav.navBar .searchBar {
-  width: 60%;
+  width: 70%;
   display: grid;
   grid-template-columns: 10% 80% 10%;
   height: 50%;
@@ -125,6 +132,17 @@
   cursor: pointer;
   background: #eee;
 }
+.library-container nav.navBar .icons .upload.store {
+  background: #ff5e00;
+  color: white;
+}
+.library-container nav.navBar .icons .upload.store span.text{
+  color: white;
+}
+.library-container nav.navBar .icons .upload.store:hover {
+  background: #a53d17;
+
+}
 
 .library-container nav.navBar .icons .upload span:nth-child(2),
 .library-container nav.navBar .icons .upload span:nth-child(3) {
@@ -148,13 +166,57 @@
 .library-container nav.navBar .icons .subIcons {
   display: flex;
   gap: 30px;
+  position: relative;
 }
 
 .library-container nav.navBar .icons .subIcons * {
   cursor: pointer;
 }
 
-.library-container nav.navBar .icons .subIcons span:hover {
+.library-container nav.navBar .icons .subIcons span svg:hover {
+  color: var(--blue-color);
+}
+
+
+
+.library-container nav.navBar .icons .subIcons .user .userIcons {
+  font-size: 14px;
+  background: #fff;
+  width: 100px;
+  top: 150%;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 5px 20px;
+  right: -200%;
+  border-radius: 5px;
+  gap: 5px;
+}
+
+.library-container nav.navBar .icons .subIcons .user .userIcons.active {
+  right: 0%;
+  display: flex;
+}
+
+.library-container nav.navBar .icons .subIcons .user .userIcons span:hover {
+  background: #eeeeee;
+  color: #8a8989;
+}
+
+.library-container nav.navBar .icons .subIcons .user .userIcons span {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background: var(--blue-color);
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.library-container nav.navBar .icons .subIcons .user .userIcons span:hover i {
   color: var(--blue-color);
 }
 
@@ -172,22 +234,32 @@
   color: white;
 }
 
+.library-container.dark nav.navBar .icons .subIcons .user .userIcons span,
 .library-container.dark nav.navBar .upload {
   background: darkgrey;
   color: white;
 }
 
+.library-container.dark nav.navBar .icons .subIcons .user .userIcons {
+  background: #000;
+}
+.library-container.dark nav.navBar .icons .subIcons .user .userIcons span:hover i {
+  color: #4070f4;
+}
+
+.library-container.dark nav.navBar .icons .subIcons .user .userIcons span:hover,
 .library-container.dark nav.navBar .upload:hover span:nth-child(2),
 .library-container.dark nav.navBar .upload:hover span {
   color: #000;
 }
 
+.library-container.dark nav.navBar .icons .subIcons .user .userIcons span,
 .library-container.dark nav.navBar .upload span:nth-child(2) {
   color: white;
 }
 
 @media (max-width: 1025px) {
-  .library-container  nav.navBar {
+  .library-container nav.navBar {
     width: 95%;
     overflow: hidden;
     display: flex;
@@ -197,29 +269,44 @@
     justify-content: space-between;
   }
 
-  .library-container  nav.navBar .toggle {
+  .library-container nav.navBar .toggle {
     display: block;
   }
 
-  .library-container  nav.navBar .logo a img {
+  .library-container nav.navBar .logo a img {
     width: 115px;
   }
 
-  .library-container  nav.navBar .searchBar {
+  .library-container nav.navBar .searchBar {
     position: fixed;
     top: 9vh;
     width: 90%;
     padding: 5px;
     height: fit-content;
-
+    
   }
 
-  .library-container  nav.navBar .icons {
+  .library-container nav.navBar .icons {
     width: auto;
     gap: 10px;
   }
+  
+  body .library-container nav.navBar .icons .subIcons span:nth-child(2) {
+    display: none;
+  }
+  .library-container nav.navBar .icons .upload span.text{
+    display: none;
+  }
+  .library-container nav.navBar .icons .upload.store {
+    gap: 2px;
+    align-items: center;
+  }
+  .library-container nav.navBar .icons .upload.store span.text{
+    display: flex;
+    font-size: 10px;
+  }
 
-  .library-container  nav.navBar .icons .subIcons {
+  .library-container nav.navBar .icons .subIcons {
     gap: 10px;
   }
 }
@@ -431,8 +518,13 @@
   display: none;
 }
 
+.library-container .sidebar .item.notification {
+  display: none;
+}
+
+
 @media screen and (max-width: 1025px) {
-  .library-container #sidebarOpen {
+  body .library-container #sidebarOpen {
     font-size: 25px;
     display: block;
     margin-right: 10px;
@@ -440,21 +532,24 @@
     color: var(--grey-color);
   }
 
-  .library-container .sidebar.close {
+  body .library-container .sidebar.close {
     left: -100%;
   }
 
-  .library-container .sidebar {
+  body .library-container .sidebar {
     left: -100%;
   }
 
 
 
 
-  .library-container  .sidebar.close .bottom_content {
+  body .library-container .sidebar.close .bottom_content {
     left: -100%;
   }
-
+  
+  body .library-container .sidebar .item.notification {
+    display: flex;
+  }
 }
 
 
@@ -585,7 +680,7 @@
 }
 
 @media (max-width: 768px) {
-  .library-container  .swiper {
+  .library-container .swiper {
     margin: 5px 0 0px 0;
   }
 }
@@ -899,11 +994,12 @@
 
 
 .library-container,
-.library-container * ,
+.library-container *,
 .library-container *::before,
 .library-container *::after {
-  box-sizing:content-box;
+  box-sizing: content-box;
 }
+
 .library-container .text-center {
   text-align: center;
 }
@@ -925,7 +1021,7 @@
 
 
 @media screen and (min-width: 1025px) {
-  .library-container  .box-container {
+  .library-container .box-container {
     flex-direction: row;
     gap: 5px;
   }
@@ -1249,12 +1345,12 @@
     overflow-x: hidden;
   }
 
-  .library-container  nav.navBar {
+  .library-container nav.navBar {
     position: fixed;
     top: 0;
   }
 
-  .library-container  .swiper {
+  .library-container .swiper {
     overflow-x: hidden;
     overflow-y: visible;
     width: 100%;
@@ -1273,30 +1369,30 @@
     display: none;
   }
 
-  .library-container   .toggle1 {
+  .library-container .toggle1 {
     display: block;
   }
 
-  .library-container  .toggle {
+  .library-container .toggle {
     padding: 8px;
   }
 
 
 
-   .library-container footer .intro,
-   .library-container footer .address,
-   .library-container footer .UsefulLinks,
-   .library-container footer .SocialMedia,
-   .library-container footer .otherWebsites,
-   .library-container footer .social {
+  .library-container footer .intro,
+  .library-container footer .address,
+  .library-container footer .UsefulLinks,
+  .library-container footer .SocialMedia,
+  .library-container footer .otherWebsites,
+  .library-container footer .social {
     margin-bottom: 1rem;
   }
 
-   .library-container footer .accordion-checkbox {
+  .library-container footer .accordion-checkbox {
     display: none;
   }
 
-   .library-container footer .accordion-label {
+  .library-container footer .accordion-label {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1307,80 +1403,80 @@
     font-weight: bold;
   }
 
-   .library-container footer .accordion-content {
+  .library-container footer .accordion-content {
     display: none;
     padding: 1rem;
     background: #171616;
   }
 
-   .library-container footer .accordion-checkbox:checked+.accordion-label+.accordion-content {
+  .library-container footer .accordion-checkbox:checked+.accordion-label+.accordion-content {
     display: block;
   }
 
-   .library-container footer img {
+  .library-container footer img {
     width: 60%;
     align-self: center;
   }
 
-   .library-container footer h3 {
+  .library-container footer h3 {
     text-align: justify;
     margin: 10px 0;
     font-weight: 500;
     font-size: 18px;
   }
 
-   .library-container footer div.links {
+  .library-container footer div.links {
     display: none;
   }
 
-   .library-container footer input:checked~div.links {
+  body .library-container footer input:checked~div.links {
     display: flex;
   }
 
-   .library-container footer input~label h3 i:nth-child(2) {
+  body .library-container footer input~label h3 svg:nth-child(2) {
     display: none;
   }
 
-   .library-container footer input:checked~label h3 i:nth-child(2) {
+  body .library-container footer input:checked~label h3 svg:nth-child(2) {
     display: flex;
   }
 
-   .library-container footer input:checked~label h3 i:nth-child(1) {
+  body .library-container footer input:checked~label h3 svg:nth-child(1) {
     display: none;
   }
 
-   .library-container footer .social {
+  .library-container footer .social {
     margin: 0;
   }
 
-   .library-container footer .social .links {
+  .library-container footer .social .links {
     gap: 10px;
   }
 
-   .library-container footer label {
+  .library-container footer label {
     display: flex;
     justify-content: space-between;
   }
 
-   .library-container footer h3 i {
+  .library-container footer h3 i {
     transform: scale(1);
   }
 
-   .library-container footer .address span.location {
+  .library-container footer .address span.location {
     display: flex;
   }
 
-   .library-container footer .address span.location i {
+  body .library-container footer .address span.location i {
     margin: 0 0px;
     margin-left: 5px;
   }
 
-  .library-container  .rights {
+  body .library-container .rights {
     width: 100%;
     margin: 0;
   }
 
-  .library-container  .rights span {
+  .library-container .rights span {
     height: 10vh;
     width: 100%;
     display: flex;
@@ -1388,102 +1484,102 @@
     align-items: center;
   }
 
-  .library-container  .slider .slide {
+  .library-container .slider .slide {
     flex: 0 0 43%;
   }
 
-  .library-container  .slider .slide button {
+  .library-container .slider .slide button {
     padding: 8px 25px
   }
 
 
-  .library-container  .BookContainer {
+  .library-container .BookContainer {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
 
-  .library-container  .BookContainer .arrow-left {
+  .library-container .BookContainer .arrow-left {
     left: 1%;
   }
 
-  .library-container  .BookContainer .arrow-right {
+  .library-container .BookContainer .arrow-right {
     right: 1%;
   }
 
-  .library-container  .BookContainer .Books {
+  .library-container .BookContainer .Books {
     margin: 10px 0;
     width: 95%;
   }
 
-  .library-container  .BookContainer .Books .slider {
+  .library-container .BookContainer .Books .slider {
     padding: 0;
     gap: 25px;
     padding: auto 4%;
   }
 
-  .library-container  .BookContainer.trending {
+  .library-container .BookContainer.trending {
     width: 100%;
   }
 
-  .library-container  .TrendingBooks.Books {
+  .library-container .TrendingBooks.Books {
     width: 85%;
     align-self: center;
     justify-self: center;
   }
 
-  .library-container  .TrendingBooks.Books .slider {
+  .library-container .TrendingBooks.Books .slider {
     gap: 25px;
   }
 
-  .library-container  .Books .slider::-webkit-scrollbar,
-  .library-container  .TrendingBooks.Books .slider::-webkit-scrollbar {
+  .library-container .Books .slider::-webkit-scrollbar,
+  .library-container .TrendingBooks.Books .slider::-webkit-scrollbar {
     display: none;
   }
 
-  .library-container  .TrendingBooks.Books .slider .slide {
+  .library-container .TrendingBooks.Books .slider .slide {
     width: 43%;
   }
 
-  .library-container  .Books {
+  .library-container .Books {
     padding: 25px 10px;
     width: 85%;
   }
 
-  .library-container  .AboutBook {
+  .library-container .AboutBook {
     width: 100%;
 
   }
 
-  .library-container  .BookContainer .headingBooks {
+  .library-container .BookContainer .headingBooks {
     width: 90%;
   }
 
   /* width: 90%; */
-  .library-container  .TrendingBooks.Books .arrow-left {
+  .library-container .TrendingBooks.Books .arrow-left {
     left: 8%;
   }
 
-  .library-container  .TrendingBooks.Books .arrow-right {
+  .library-container .TrendingBooks.Books .arrow-right {
     right: 8%;
   }
 
-  .library-container  .arrow-left {
+  .library-container .arrow-left {
     left: 8%;
   }
 
-  .library-container  .arrow-right {
+  .library-container .arrow-right {
     right: 8%;
   }
 
-  .library-container  .box-container,
-  .library-container  .BookContainer,
-   .library-container footer {
+  .library-container .box-container,
+  .library-container .BookContainer,
+  .library-container footer {
     margin-left: 0%;
     width: 100%;
   }
 
-   .library-container footer {
+  .library-container footer {
     display: block;
     width: 90%;
     padding: 10% 5%;
@@ -1499,19 +1595,19 @@
 }
 
 @media (max-width: 1025px) {
-  .library-container  .sideNavContainer input~.sidebar {
+  .library-container .sideNavContainer input~.sidebar {
     left: -100%;
   }
 
-  .library-container  .sideNavContainer input:checked~.sidebar {
+  .library-container .sideNavContainer input:checked~.sidebar {
     left: 0;
   }
 
-  .library-container  .sidebar {
+  .library-container .sidebar {
     top: 9vh;
   }
 
-  .library-container  .box-container {
+  .library-container .box-container {
     width: 100%;
     display: flex;
     gap: 20px;
@@ -1554,7 +1650,7 @@
   }
 
   .library-container .flip-box-front,
-  .library-container  .flip-box-back {
+  .library-container .flip-box-back {
     min-height: 450px;
   }
 }

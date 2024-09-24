@@ -8,7 +8,6 @@ const AboutBookComponent = ({
   book, //the book selected
   handleClose, // function to close the aboutbook conatiner
 }) => {
-  
   return (
     <div className="BookContainer">
       <div className="AboutBook">
@@ -21,13 +20,13 @@ const AboutBookComponent = ({
         </div>
         {/*book image */}
         <div className="image">
-          <img src={book.coverImages[0]} alt="Book" />
+          <img src={book.image} alt="Book" />
         </div>
 
         {/**book details  */}
         <div className="bookDetails">
-          <h4>{book.title}</h4>
-          <span>{book.author}</span>
+          <h4>Book Name</h4>
+          <span>Author Name</span>
         </div>
 
         {/**rating  */}
@@ -43,7 +42,7 @@ const AboutBookComponent = ({
         <div className="genre">
           <span>THRILLER | ACTION | SAD</span>
         </div>
-        <Link to='/book' state={{book}}>
+        <Link to="/book">
           <button>
             <i className="fa fa-book"></i> Read Now
           </button>
@@ -51,7 +50,10 @@ const AboutBookComponent = ({
 
         {/*book paragraph */}
         <p>
-         {book.bookDescription}
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque
+          eum nostrum nulla. Excepturi deleniti quod fugiat veniam provident
+          nisi, commodi id fuga, dolor sapiente obcaecati iusto quisquam iste
+          facere saepe!
         </p>
       </div>
     </div>

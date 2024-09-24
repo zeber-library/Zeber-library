@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ShareBookButton from "./shareBookButton";
 
-const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
+const FirstPage = ({ setIsLiked, setFavCount, favCount }) => {
   // State to manage the current slide index in the slideshow
   const [slideIndex, setSlideIndex] = useState(1);
+
+  // State to manage the share popup
+  const [shareBook, setShareBook] = useState(false);
 
   // Effect to handle the display of slides based on the current slideIndex
   useEffect(() => {
@@ -20,11 +24,7 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
   const currentSlide = (n) => {
     setSlideIndex(n);
   };
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const date = new Date(dateString);
-    return date.toLocaleDateString(undefined, options);
-  };
+
   // Function to show the slides based on the current index
   const showSlides = (n) => {
     let slides = document.querySelectorAll("#FirstPage .slides");
@@ -61,20 +61,25 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
     });
   };
 
-  
+  // Function to handle the share button click
+  const handleShareClick = (e) => {
+    e.preventDefault();
+    setShareBook(true);
+  }
+
   return (
     <div id="FirstPage">
       {/* Slideshow */}
       <section>
         <div className="slideshow-container">
           <div className="slides">
-            <img src={book?.coverImages[0]} alt="Book 1" />
+            <img src="/Book/images/1154308-M.jpg" alt="Book 1" />
           </div>
           <div className="slides">
-            <img src={book?.coverImages[1]} alt="Book 2" />
+            <img src="/Book/images/123863-M.jpg" alt="Book 2" />
           </div>
           <div className="slides">
-            <img src={book?.coverImages[2]} alt="Book 3" />
+            <img src="/Book/images/14638562-M.jpg" alt="Book 3" />
           </div>
           <div className="slide-control">
             <a className="prev" onClick={() => plusSlides(-1)}>
@@ -88,29 +93,27 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
         <div className="thumbnail-container">
           <img
             className="thumbnail"
-            src={book?.coverImages[0]}
+            src="/Book/images/1154308-M.jpg"
             onClick={() => currentSlide(1)}
             alt="Book 1"
           />
           <img
             className="thumbnail"
-            src={book?.coverImages[1]}
+            src="/Book/images/123863-M.jpg"
             onClick={() => currentSlide(2)}
             alt="Book 2"
           />
           <img
             className="thumbnail"
-            src={book?.coverImages[2]}
+            src="/Book/images/14638562-M.jpg"
             onClick={() => currentSlide(3)}
             alt="Book 3"
           />
         </div>
       </section>
 
-
       {/* Text content */}
       <aside>
-        {/*socials  */}
         <div className="social">
           <div className="fav">
             <a href="#" className="favourite" onClick={handleLikeClick}>
@@ -119,21 +122,17 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
             <span>{favCount.toLocaleString()}</span>
           </div>
           <div className="Share">
-            <a href="#" className="share">
+            <a href="#" className="share" onClick={handleShareClick}>
               <i className="fa-solid fa-share"></i>
             </a>
             <span>12</span>
           </div>
         </div>
-
-        {/*heading */}
         <div className="heading">
           <h1>
-         { book?.title}
+            Verity: The Thriller That Will Capture Your Heart And Blow Your Mind
           </h1>
         </div>
-
-        {/*buttons */}
         <div className="buttons">
           <Link to="/video" target="_blank">
             <button>Video Summary</button>
@@ -141,9 +140,8 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
           <Link to="/music" target="_blank">
             <button>Audio Summary</button>
           </Link>
-        </div>
 
-        {/*Highlights */}
+        </div>
         <div className="highlights">
           <div className="heading">
             <h3>Highlights</h3>
@@ -151,23 +149,33 @@ const FirstPage = ({  setIsLiked, setFavCount, favCount,book }) => {
           <nav>
             <div className="items">
               <img src="/Book/images/language.svg" alt="Language" />
-              <span>{book?.language}</span>
+              <span>ENGLISH</span>
               <p>Language</p>
             </div>
             <div className="items">
               <img src="/Book/images/paper.svg" alt="Pages" />
-              <span>{book?.pages}</span>
+              <span>336</span>
               <p>Pages</p>
             </div>
-           
+            <div className="items">
+              <img src="/Book/images/binding.svg" alt="Binding" />
+              <span>PAPERBACK</span>
+              <p>Binding</p>
+            </div>
             <div className="items">
               <img src="/Book/images/calendar.svg" alt="Calendar" />
-              <span>{formatDate(book?.createdAt)}</span>
+              <span>2022</span>
               <p>Publish Date</p>
             </div>
           </nav>
         </div>
+
+        <ShareBookButton shareBook={shareBook} setShareBook={setShareBook}/>
+        <Link to="/buy-sell" className="buyBook" target="_blank">
+          <button>Buy Book</button>
+        </Link>
       </aside>
+
     </div>
   );
 };

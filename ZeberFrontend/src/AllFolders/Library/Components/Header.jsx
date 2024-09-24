@@ -27,12 +27,21 @@ const Header = ({
           <span><i className="fa fa-magnifying-glass"></i></span>
         </div>
         {/* Rest Icons */}
+        {/*for uploading book */}
         <div className="icons">
           <Link to="/upload-book">
           <div className="upload">
             <span><i className="fa fa-upload"></i></span>
             <span className="text">Upload your book</span>
           </div>
+          </Link>
+
+         {/*for the buy sell   */} 
+          <Link to="/buy-sell">
+          <div className="upload store">
+              <span><i className="fa fa-store"></i></span>
+              <span className="text">Zeber Store</span>
+            </div>
           </Link>
           
         
