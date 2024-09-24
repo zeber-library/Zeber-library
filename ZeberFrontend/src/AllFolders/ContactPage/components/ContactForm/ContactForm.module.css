@@ -1,0 +1,163 @@
+/* General Container */
+.contactContainer {
+  max-width: 850px; /* Reduced width */
+  margin-left: 580px;
+  display: flex;
+  align-items: flex-start; /* Align to the top */
+  padding: 20px;
+  position: relative;
+  background-color: #111010; /* Dark background */
+  top: -90px; /* Gap from the top (adjust based on header height) */
+  left: 20px; /* Slightly positioned to the left */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-sizing: content-box;
+}
+
+/* Top Button Styling */
+.top_btn {
+  display: flex;
+  gap: 10px;
+}
+
+/* Contact Form */
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1; /* Ensures it takes up available space */
+}
+
+/* Form Styling */
+.contact_form form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 20px;
+}
+
+/* Form Fields Styling */
+.form_fields {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  flex-direction: column;
+  position: relative;
+  border-radius: 15px;
+  background: #1f1f1f; /* Darker background */
+  padding: 20px;
+  border: 2px solid #333;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+}
+
+.form_fields:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly lighter on hover */
+}
+
+/* Input Field Styling */
+.form_fields input,
+.form_fields textarea {
+  height: 45px;
+  padding: 0 12px;
+  border: 2px solid #444;
+  border-radius: 10px;
+  background: #2a2a2a; /* Dark background for inputs */
+  color: #ddd; /* Light text color */
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form_fields input:focus,
+.form_fields textarea:focus {
+  border-color: rgba(0, 150, 255, 0.8); /* Bright blue border on focus */
+  box-shadow: 0 0 12px rgba(0, 150, 255, 0.6);
+  outline: none;
+}
+
+/* Label Styling */
+.form_fields label {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: #1f1f1f; /* Match background */
+  padding: 0 6px;
+  color: #666; /* Light grey color */
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect for labels */
+.form_fields input:hover + label,
+.form_fields input:focus + label,
+.form_fields textarea:hover + label,
+.form_fields textarea:focus + label {
+  color: rgba(0, 150, 255, 1); /* Bright blue */
+  transform: translateY(-10px);
+  font-size: 13px;
+  text-shadow: 0 2px 4px rgba(0, 150, 255, 0.6);
+}
+
+/* Additional hover effect for the whole form_fields */
+.form_fields:hover label {
+  color: rgba(0, 150, 255, 1); /* Bright blue on hover */
+}
+
+/* Submit Button Container */
+
+/* Submit Button Styling */
+
+/* Image Box Styling */
+.img_box {
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  flex: 1; /* Ensure it takes up available space */
+}
+
+.img_box img {
+  max-width: 100%; /* Ensure the image is responsive */
+  height: auto;
+  margin-top: 40px;
+  margin-left: 49px; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for the image */
+}
+.img_box {
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  flex: 1; /* Ensure it takes up available space */
+}
+
+.img_box img {
+  max-width: 100%; /* Ensure the image is responsive */
+  height: auto;
+  margin-top: 40px;
+  margin-left: 49px; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners for the image */
+}
+.submit_button_container {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  margin-top: 20px; /* Adds some space above the button */
+}
+
+.submit_button {
+  padding: 16px 32px; /* Adjust padding for better button size */
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit_button:hover {
+  background-color: #118cf1;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

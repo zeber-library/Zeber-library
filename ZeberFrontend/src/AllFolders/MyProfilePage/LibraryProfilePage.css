@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@media (max-width: 1024px) {
+    
+    body .LibraryProfilePage .toggle{
+        position: absolute;
+        display: flex;
+        z-index: 99;
+        display: flex;
+        left: 5px;
+        font-size: 20px;
+        padding: 10px;
+    }
+    
+    body .LibraryProfilePage {
+        padding: 2% 1%;
+        justify-content: center;
+    }
+    body .LibraryProfilePage .ProfilePages{
+        width: 90%;
+        padding: 2% 1%;
+    }
+    
+    body  div.rights span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.LibraryProfilePage .toggle{
+    display: none;
+}
+.LibraryProfilePage {
+    display: flex;
+    background: #EEEEEE;
+    padding: 2% 10%;
+    min-height: 98vh;
+}
+
+.LibraryProfilePage * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    transition: .2s ease all;
+}
+
+.LibraryProfilePage .ProfilePages{
+    width: 60%;
+}
+.LibraryProfilePage .ProfilePages * {
+    user-select: none;
+}
+.LibraryProfilePage .ProfilePages form *{
+    text-transform: uppercase;
+}
+.LibraryProfilePage .ProfilePages button{
+    letter-spacing: .3px;
+}
+.LibraryProfilePage .ProfilePages h2{
+    height: 11.5vh;
+    padding-left: 5%;
+}
+
+
+.LibraryProfilePage .ProfilePages div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2% 4% ;
+}
+
+
+.copy-rights {
+    width: 100%;
+    background: #171616;
+    color: #fafafa;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.copy-rights span {
+    padding: 1% 0;
+    border-top: 1px solid #fafafa;
+    width: 85%;
+    font-weight: 100;
+}
+
+.copy-rights span a {
+    font-weight: 200;
+    color: #fff;
+}

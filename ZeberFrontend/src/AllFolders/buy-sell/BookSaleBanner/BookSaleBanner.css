@@ -1,0 +1,131 @@
+.banner2 {
+  padding: 20px;
+}
+
+.banner2 .banner-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 450px;
+  background-color: #E2BFD9;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.banner2 .banner-content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.banner2 .banner-content h2 {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+
+.banner2 .banner-content p {
+  font-size: 20px;
+  color: white;
+}
+
+.banner2 .shop-now-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.banner2 .browse-by-hashtag {
+  margin-top: 50px;
+}
+
+.banner2 .hashtag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.banner2 .hashtag-list li {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #D1E9F6;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+
+
+@media (max-width: 1024px) {
+  .banner2 .banner-content {
+    flex-direction: column; 
+    gap: 20px; 
+    padding: 20px;
+  }
+
+  .banner2 .banner-content h2 {
+    font-size: 22px;
+  }
+
+  .banner2  .banner-content p {
+    font-size: 18px;
+  }
+
+  .banner2  .shop-now-button {
+    padding: 8px 16px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .banner2  .banner-content {
+    padding: 15px;
+    gap: 10px; 
+  }
+
+  .banner2  .banner-content h2 {
+    font-size: 20px;
+  }
+
+  .banner2  .banner-content p {
+    font-size: 16px;
+  }
+
+  .banner2  .shop-now-button {
+    padding: 6px 12px;
+  }
+
+  .banner2 .browse-by-hashtag {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner2  .banner-content {
+    padding: 10px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .banner2  .banner-content h2 {
+    font-size: 18px;
+  }
+
+  .banner2  .banner-content p {
+    font-size: 14px;
+  }
+
+  .banner2  .shop-now-button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .banner2  .hashtag-list li {
+    font-size: 16px;
+    padding: 5px;
+  }
+}

@@ -1,0 +1,88 @@
+.ai-component {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 40px 40px;
+  flex-wrap: wrap; 
+}
+
+.ai-component .ai-icon {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.ai-component .ai-text {
+  flex: 1;
+  color: #333;
+}
+
+.ai-component .ai-text h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.ai-component .ai-text p {
+  color: #666;
+  font-size: 16px;
+}
+
+.ai-component .ai-chat-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+   .ai-component {
+    flex-direction: column; 
+    padding: 15px;
+    margin: 20px 20px;
+  }
+  
+  .ai-component .ai-icon {
+    height: 30px; 
+    margin-bottom: 10px;
+  }
+
+  .ai-component .ai-text h3 {
+    font-size: 20px; 
+  }
+
+  .ai-component .ai-text p {
+    font-size: 14px; 
+  }
+
+  .ai-component .ai-chat-button {
+    padding: 8px 16px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-component .ai-component {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .ai-component .ai-icon {
+    height: 25px;
+  }
+
+  .ai-component  .ai-text h3 {
+    font-size: 18px;
+  }
+
+  .ai-component .ai-text p {
+    font-size: 12px;
+  }
+
+  .ai-component .ai-chat-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
