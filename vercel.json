@@ -32,7 +32,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "/frontend/build/$1"
+        "dest": "/ZeberFrontend/dist/$1"
       }
     ]
   }
