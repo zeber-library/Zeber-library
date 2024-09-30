@@ -1,0 +1,121 @@
+.music-container main header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px 20px;
+    position :fixed;
+    top: 0; /* Stick it to the top */
+    z-index: 1000; /* Ensure it appears above other content */
+    background-color:black; 
+    overflow: hidden; /* Prevent overflow */
+    gap:18px;
+
+}
+
+.music-container main header .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.music-container main header .nav-links a {
+    text-transform: uppercase;
+    color: #919191;
+    transition: all 0.3s ease;
+}
+
+.music-container main header .search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 50vw;
+    background-color: #1d1d1d;
+    border: 1px solid #464748;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.music-container main header .search input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+/* Merged Profile Section */
+.music-container main header .profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+    margin-bottom: 0; /* Removed unnecessary margin-bottom */
+}
+
+.music-container main header .profile .user {
+    display: flex;
+}
+
+.music-container main header .profile .user .left {
+    display: flex;
+    align-items: center;
+    background: #32323d;
+    padding: 6px;
+    border-radius: 6px 0 0 6px;
+}
+
+.music-container main header .profile .user .left img {
+    width: 30px;
+    height: 30px;
+}
+
+.music-container main header .profile .user .right {
+    background-color: #25252d;
+    border-radius: 0 6px 6px 0;
+    padding: 13px;
+    color: #fff;
+}
+
+.music-container main header .nav-links button,
+.music-container .sidebar .logo button{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b00e5;
+    border: 1px solid #464748;
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 8px;
+    cursor: pointer;}
+
+
+ @media screen and (max-width: 1400px){
+    .music-container main header .search {
+     
+        width: 40vw;
+       
+    }
+    }
+
+@media screen and (max-width: 1200px){
+        .music-container main header .search {  
+            width: 35vw;      
+        }
+
+        .music-container header{
+            gap:5px;
+        }
+
+
+        .music-container main header .profile{
+            gap:5px
+        }
+        }
+
+
+@media screen and (max-width: 768px){
+    .music-container main header .profile {
+        display: none;
+    }
+}

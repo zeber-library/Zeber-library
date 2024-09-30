@@ -47,6 +47,32 @@ const Music = () => {
     };
 
 
+      //! Effect to handle window resizing and set sidebar to false if < 992px
+      useEffect(() => {
+        const handleResize = () => {
+          if (window.innerWidth < 992) {
+            setIsSidebarOpen(false); // Close sidebar on smaller screens
+          } else {
+            setIsSidebarOpen(true); // Keep sidebar open on larger screens
+          }
+        };
+    
+        // Initial check on load
+        handleResize();
+    
+        // Add event listener for window resize
+        window.addEventListener("resize", handleResize);
+    
+        // Cleanup event listener on component unmount
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
+      }, []); // Empty array ensures this effect only runs on mount and unmount
+  
+
+
+
+
     //function for setting the index of the song 
     const playSong = (index = songIndex) => {
         setSongIndex(index);
@@ -96,9 +122,10 @@ const Music = () => {
 
 
             {/**main section  */}
-            <main>
-                  {/* Header component with sidebar toggle */}
-                <Header toggleSidebar={toggleSidebar} />
+            <main className='main'>
+
+                   {/* Header component with sidebar toggle */}
+                   <Header toggleSidebar={toggleSidebar} />
 
                 {/* Trending section with a function to play the first song */}
                 <Trending playSong={() => playSong(0)} />
@@ -109,8 +136,7 @@ const Music = () => {
 
             {/*right section */}
             <div className='music-right-section' >
-                {/*Profile section  */}
-                <Profile />
+               
 
                  {/* MusicPlayer component to control playback and display current song details */}
                 <MusicPlayer
