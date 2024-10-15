@@ -1,0 +1,104 @@
+/* Container Styling */
+.sell-container {
+  background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+  padding: 30px;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  border: 1px solid #80deea;
+}
+
+/* Header Styling */
+.sell-container h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #00796b;
+  margin-bottom: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #004d40;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #b2dfdb;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="file"]:focus {
+  border-color: #00796b;
+  box-shadow: 0 0 5px rgba(0, 150, 136, 0.5);
+  outline: none;
+}
+
+/* Button Styling */
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background: #00796b;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+  background: #004d40;
+  transform: scale(1.05);
+}
+
+/* Preview Styling */
+.preview-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.preview-container h2 {
+  font-size: 1.2rem;
+  color: #004d40;
+  margin-bottom: 10px;
+}
+
+.cover-preview {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #00796b;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sell-container {
+    padding: 20px;
+  }
+
+  .sell-container h1 {
+    font-size: 2rem;
+  }
+}
+

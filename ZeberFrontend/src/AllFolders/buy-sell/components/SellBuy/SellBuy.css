@@ -1,0 +1,118 @@
+.container-sell-buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  flex-wrap: wrap; /* Allows the cards to stack on smaller screens */
+}
+
+.card-sell-buy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 450px;
+  height: 450px;
+  background-color: #E7E7FF;
+  border-radius: 10px;
+  margin: 0 10px;
+  margin-right: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-sell-buy:nth-child(3) {
+  background-color: #FFF2C6;
+}
+
+.icon-sell-buy img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.action-btn-sell-buy {
+  background-color: #e0f3ff;
+  color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.or {
+  font-size: 18px;
+  color: #555;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #F1F1F1;
+  padding-top: 12px;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .card-sell-buy {
+    width: 350px;
+    height: 350px;
+  }
+
+  .icon-sell-buy img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .action-btn-sell-buy {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-sell-buy {
+    
+    margin-top: 20px;
+  }
+  .card-sell-buy {
+    width: 300px;
+    height: 300px;
+  }
+
+  .icon-sell-buy img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .action-btn-sell-buy {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-sell-buy {
+    flex-direction: column; /* Stack the cards vertically on smaller screens */
+    margin-top: 20px;
+  }
+
+  .card-sell-buy {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Add space between stacked cards */
+  }
+
+  .icon-sell-buy img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .action-btn-sell-buy {
+    font-size: 14px;
+  }
+
+  .or {
+    display: none; /* Hide 'or' text on small screens */
+  }
+}

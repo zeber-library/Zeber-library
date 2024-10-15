@@ -1,0 +1,893 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+
+
+.audioBook-container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr;
+    background: linear-gradient(#050505, #18181d);;
+    overflow-y: auto; 
+    
+}
+
+.audioBook-container .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.audioBook-container .control-btn {
+    background: none; /* No background */
+    border: none; /* No border */
+    padding: 10px;
+    font-size: 24px;
+    color: #333; /* Dark gray color */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+
+.audioBook-container .control-btn i {
+    pointer-events: none; /* Prevent the icon from triggering events */
+}
+
+.audioBook-container .control-btn:hover {
+    color: #007bff; /* Change color on hover (blue in this case) */
+}
+
+.audioBook-container .control-btn:active {
+    color: #0056b3; /* Darker blue when button is clicked */
+}
+
+.audioBook-container .control-btn:focus {
+    outline: none; /* Remove outline when focused */
+}
+
+.audioBook-container a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.audioBook-container i{
+    color: #fff;
+    cursor: pointer;
+}
+
+.audioBook-container .sidebar .logo img {
+    width: 80px; /* Set the logo width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto 20px; /* Center horizontally and space below */
+    display: block; /* Center the logo horizontally */
+} 
+.audioBook-container img{
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+}
+
+
+
+.audioBook-container .sidebar{
+    height: 100vh;
+    background-color: #18181d;
+    padding: 20px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10000;
+    transition: all 0.6s ease;
+}
+
+.audioBook-container .sidebar .logo{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.audioBook-container .sidebar .logo > i{
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.audioBook-container .sidebar .logo a{
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.audioBook-container .sidebar .logo a:hover,
+.audioBook-container .sidebar .menu ul li:hover a,
+.audioBook-container .sidebar .menu ul li:hover i,
+.audioBook-container main header .nav-links a:hover{
+    color: #5773ff;
+}
+
+.audioBook-container .sidebar .menu h5{
+    color: #919191;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.audioBook-container .sidebar .menu ul{
+    list-style: none;
+}
+
+.audioBook-container .sidebar .menu ul li{
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.audioBook-container .sidebar .menu ul li a{
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.audioBook-container .sidebar .playing .top{
+    background-color: #32323d;
+    border-radius: 6px 6px 0 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.audioBook-container .sidebar .playing .top img{
+    width: 36px;
+    height: 36px;
+}
+
+.audioBook-container .sidebar .playing .bottom{
+    background-color: #25252d;
+    border-radius: 0 0 6px 6px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.audioBook-container .sidebar .playing .bottom i,
+.audioBook-container .sidebar .playing .bottom p{
+    color: #919191;
+}
+
+.audioBook-container main{
+    padding: 20px 36px;
+}
+
+.audioBook-container main header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.audioBook-container main header .nav-links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.audioBook-container main header .nav-links a{
+    text-transform: uppercase;
+    color: #919191;
+    transition: all 0.3s ease;
+}
+
+.audioBook-container main header .search{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 50vw;
+    background-color: #1d1d1d;
+    border: 1px solid #464748;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.audioBook-container main header .search input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.audioBook-container main .trending{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.audioBook-container main .trending .left .info{
+    margin-top: 12px;
+    padding: 26px;
+}
+
+.audioBook-container main .trending .left .info h2{
+    font-size: 56px;
+    margin-bottom: 8px;
+}
+
+.audioBook-container main .trending .left .info h4,
+.audioBook-container main .trending .left .info h5{
+    display: inline;
+}
+
+.audioBook-container main .trending .left .info h5{
+    margin-left: 12px;
+    color: #919191;
+}
+
+.audioBook-container main .trending .left .info .buttons{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.audioBook-container main .trending .left .info .buttons button{
+    padding: 12px 16px;
+    background-color: #5773ff;
+    border: none;
+    border-radius: 14px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.audioBook-container main .trending .left .info .buttons i{
+    color: #5773ff;
+    font-size: 20px;
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.audioBook-container main .trending img{
+    width: 200px;
+    height: 280px;
+}
+
+.audioBook-container main .playlist{
+    margin-top: 14px;
+    display: flex;
+    gap: 20px;
+}
+
+
+.audioBook-container main .playlist .music-list .items .item .info,
+.audioBook-container main .playlist .music-list .items .item .actions{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.audioBook-container main .playlist .music-list .items .item .info p{
+    color: #919191;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+.audioBook-container main .playlist .music-list .items .item .info img{
+    width: 50px;
+    height: 50px;
+}
+
+.audioBook-container main .playlist .music-list .items .item .actions p{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.audioBook-container main .playlist .music-list .items .item .actions .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #32323d;
+    padding: 6px;
+    border: 2px solid #464748;
+    border-radius: 6px;
+}
+
+.audioBook-container main .playlist .music-list .items .item .actions .icon i{
+    font-size: 10px;
+    color: #5773ff;
+}
+
+.audioBook-container main .playlist .music-list .items .item .actions i{
+    color: #919191;
+}
+
+.audioBook-container .thill-right-section{
+    padding: 10px 36px 20px 0;
+    margin-top: -780px;
+    margin-left: 850px;
+}
+
+.audioBook-container .thill-right-section .profile{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: -15px;
+}
+
+.audioBook-container .thill-right-section .profile .user{
+    display: flex;
+}
+
+.audioBook-container .thill-right-section .profile .user .left{
+    display: flex;
+    align-items: center;
+    background: #32323d;
+    padding: 6px;
+    border-radius: 6px 0 0 6px;
+}
+
+.audioBook-container .thill-right-section .profile .user .left img{
+    width: 30px;
+    height: 30px;
+}
+
+.audioBook-container .thill-right-section .profile .user .right{
+    background-color: #25252d;
+    border-radius: 0 6px 6px 0;
+    padding: 13px;
+    color: #fff;
+}
+
+.audioBook-container .thill-right-section .music-player{
+    color: #fff;
+    background-color: #202026;
+    border-radius: 6px;
+    height: 88%;
+    display: flex;
+  
+    flex-direction: column;
+}
+
+.audioBook-container .thill-right-section .music-player .top-section{
+    padding: 20px;
+    height: 96%;
+}
+
+.audioBook-container .thill-right-section .music-player .header{
+    display: flex;
+    align-items: center;
+    
+    margin-bottom: 10px;
+}
+
+.audioBook-container .thill-right-section .music-player .song-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    text-align: center;
+}
+
+.audioBook-container .thill-right-section .music-player .song-info img{
+    width: 280px;
+    height: 390px;
+}
+
+.audioBook-container .thill-right-section .music-player .description h3{
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.audioBook-container .thill-right-section .music-player .description h5{
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.audioBook-container .thill-right-section .music-player .description p{
+    color: #919191;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.audioBook-container .thill-right-section .music-player .song-info .progress{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.audioBook-container .thill-right-section .music-player .song-info .progress p{
+    font-size: 11px;
+}
+
+.audioBook-container .thill-right-section .music-player .song-info .progress .active-line{
+    position: relative;
+    width: 120px;
+    height: 2px;
+    background-color: #fff;
+    margin-left: 30px;
+}
+
+.audioBook-container .thill-right-section .music-player .song-info .progress .deactive-line{
+    width: 80px;
+    height: 2px;
+    background-color: #919191;
+    margin-right: 30px;
+}
+
+.audioBook-container .thill-right-section .music-player .song-info .progress .active-line::before{
+    content: "";
+    background-color: #25252d;
+    height: 10px;
+    width: 10px;
+    border: 2px solid #fff;
+    position: absolute;
+    top: -6px;
+    left: 120px;
+    border-radius: 50%;
+}
+
+.audioBook-container .thill-right-section .music-player .player-actions{
+    background-color: #5773ff;
+    height: 26%;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.audioBook-container .thill-right-section .music-player .player-actions .buttons{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 3px 42px;
+
+    margin-top: -4px;
+}
+
+.audioBook-container .thill-right-section .music-player .player-actions .buttons i{
+    font-size: 30px;
+}
+
+.audioBook-container .thill-right-section .music-player .player-actions .buttons .play-button{
+    padding: 16px;
+    background-color: #fff;
+    color: #5773ff;
+    border-radius: 18px;
+}
+
+.audioBook-container .thill-right-section .music-player .player-actions .lyrics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 8px;
+}
+
+.audioBook-container main header .nav-links button,
+.audioBook-container .sidebar .logo button{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b00e5;
+    border: 1px solid #464748;
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) {
+    
+    .audioBook-container .sidebar .playing .bottom p{
+        font-size: 10px;
+    }
+
+    .audioBook-container main header .search{
+        width: 100%;
+    }
+
+    .audioBook-container main .trending .left .info h2{
+        font-size: 36px;
+    }
+
+    .audioBook-container main .trending img{
+        width: 200px;
+        height: 280px;
+    }
+
+    .audioBook-container main .playlist .genres{
+        width: 30%;
+    }
+
+    .audioBook-container main .playlist .genres .items{
+        grid-template-columns: 1fr;
+    }
+
+    .audioBook-container main .playlist .genres .items .item{
+        padding: 10px;
+    }
+
+    .audioBook-container main .playlist .genres .items .item p{
+        font-size: 12px;
+    }
+
+    .audioBook-container main .playlist .genres .items .item:nth-child(6),
+    .audioBook-container main .playlist .music-list .items .item .info > p{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .outer {
+        display: none; /* Hide outer when screen is less than 1200px */
+    }
+
+    .audioBook-container .thill-right-section{
+        margin-top:0px;
+        margin-left: 0px;
+    }
+    
+
+    
+    .audioBook-container main header .search{
+        width: 50vw;
+    }
+
+    .audioBook-container main .trending .left .info h2{
+        font-size: 24px;
+    }
+
+    .audioBook-container main .trending .left .info h5{
+        display: block;
+        font-size: 12px;
+        margin-left: 0;
+    }
+
+    .audioBook-container main .trending .left .info .buttons button{
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .audioBook-container main .trending .left .info .buttons i{
+        font-size: 14px;
+    }
+
+    .audioBook-container main .playlist .genres{
+        display: none;
+    }
+
+    .audioBook-container main .playlist .music-list{
+        width: 100%;
+    }
+    
+    .audioBook-container .thill-right-section .music-player{
+        height: 88%;
+    }
+
+    .audioBook-container .thill-right-section .music-player .song-info img{
+        width: 220px;
+        height: 220px;
+    }
+
+    .audioBook-container .thill-right-section .music-player .song-info .description h3{
+        font-size: 22px;
+    }
+
+    .audioBook-container .thill-right-section .music-player .song-info .progress{
+        margin: 0;
+    }
+
+    .audioBook-container .thill-right-section .music-player .song-info .progress .active-line{
+        width: 80px;
+    }
+
+    .audioBook-container .thill-right-section .music-player .song-info .progress .deactive-line{
+        width: 40px;
+    }
+
+    .audioBook-container .thill-right-section .music-player .song-info .progress .active-line::before{
+        left: 80px;
+    }
+
+    .audioBook-container .thill-right-section .music-player .player-actions .buttons{
+        margin-top: 30px;
+    }
+
+    .audioBook-container .thill-right-section .music-player .player-actions .buttons .play-button{
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .outer {
+        padding: 10px 5%;
+        width: 100%;
+    }
+
+    .audioBook-container .thill-right-section {
+        margin-top: 0;
+        margin-left: 0;
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .audioBook-container .thill-right-section .music-player {
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .audioBook-container .thill-right-section .music-player .song-info img {
+        width: 100%; /* Make image responsive */
+        height: auto;
+    }
+
+
+    
+    .audioBook-container{
+        grid-template-columns: 3fr 2fr;
+    }
+
+    .audioBook-container .sidebar{
+        position: absolute;
+        left: -100%;
+    }
+
+    .audioBook-container .sidebar .playing{
+        display: none;
+    }
+
+    .audioBook-container main header .nav-links a{
+        font-size: 13px;
+    }
+
+    .audioBook-container main header .search{
+       width: 50vw;
+    }
+
+    .audioBook-container main header .search input{
+        display: none;
+    }
+
+    .audioBook-container main .trending img{
+        width: 120px;
+        height: 100px;
+        margin-top: 66px;
+    }
+
+    .audioBook-container main .playlist{
+        margin-top: 40px;
+    }
+    
+    .audioBook-container .thill-right-section .music-player{
+        height: 87%;
+    }
+
+    .audioBook-container .thill-right-section .music-player .song-info img{
+        width: 180px;
+        height: 180px;
+    }
+
+    .audioBook-container .thill-right-section .music-player .player-actions .buttons{
+        margin-top: 38px;
+    }
+
+    .audioBook-container .thill-right-section .music-player .player-actions .buttons i{
+        font-size: 18px;
+    }
+
+    .audioBook-container main header .nav-links button,
+    .audioBook-container .sidebar .logo button{
+        display: flex;
+    }
+
+}
+
+.audioBook-container .outer {
+    padding: 15px 9%;
+    padding-bottom: 100px;
+    transition: all 0.5s ease; /* Smooth transition for shrinking */
+
+}
+
+.audioBook-container .outer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px; /* Adds separation between the boxes */
+}
+
+.audioBook-container .box-container .box {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    background: rgba(61, 124, 226, 0.2); /* Semi-transparent background for glass effect */
+    backdrop-filter: blur(10px); /* Background blur for glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    text-align: center;
+    display: flex;
+    margin-right: 361px;
+    margin-left: -95px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(16, 105, 193, 0.3); /* Light border for the glass look */
+}
+
+.audioBook-container .box-container .box img {
+    height: 80px;
+    margin-bottom: 0;
+    margin-right: 15px;
+}
+
+.audioBook-container .box-container .box h3 {
+    color: #fff; /* White color for better contrast */
+    font-size: 24px; /* Slightly larger font size */
+    font-weight: bold; /* Make the text bold */
+    font-family: 'Poppins', sans-serif; /* Use a stylish, modern font */
+    letter-spacing: 1px; /* Slight spacing between letters */
+    text-transform: uppercase; /* Convert text to uppercase for emphasis */
+    padding: 0 10px;
+    margin: 0; /* Remove default margin */
+}
+
+.audioBook-container .box-container .box p {
+    color: #e0e0e0; /* Light grey color for contrast */
+    font-size: 16px; /* Slightly larger font size */
+    line-height: 1.8;
+    margin: 0 15px;
+    font-family: 'Roboto', sans-serif; /* Modern font for readability */
+    font-weight: 300; /* Light font weight for a sleek look */
+    flex: 1;
+}
+
+.audioBook-container .box-container .box .btn {
+    margin-top: 0;
+    background: linear-gradient(45deg, #0d52ff, #56a9ed); /* Gradient button background */
+    color: #fff; /* White text color */
+    font-size: 18px; /* Larger font size */
+    font-family: 'Montserrat', sans-serif; /* Bold and stylish font */
+    font-weight: bold; /* Bold text */
+    border-radius: 50px; /* Fully rounded button */
+    padding: 10px 30px; /* Larger padding for emphasis */
+    border: none; /* Remove default border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .3); /* Add a shadow for a 3D effect */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    transition: all 0.4s ease; /* Smooth transition for hover effects */
+}
+
+.audioBook-container .box-container .box .btn:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c); /* Reverse gradient on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .4); /* Increase shadow on hover */
+    letter-spacing: 1.2px; /* Increase letter spacing on hover */
+}
+
+.audioBook-container .box-container .box:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .3);
+    transform: scale(1.03);
+}
+
+@media (max-width:768px){
+    .audioBook-container{
+        padding:20px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    .audioBook-container{
+        grid-template-columns: 1fr;
+    }
+
+    .audioBook-container main .trending,
+    .audioBook-container main .playlist{
+        display: none;
+    }
+
+    .audioBook-container main header .search{
+        width: 50vw
+    }
+
+    .audioBook-container main header .search input{
+        display: block;
+    }
+
+    .audioBook-container .thill-right-section{
+        padding: 20px 36px;
+    }
+
+    .audioBook-container .thill-right-section .profile{
+        justify-content: center;
+        display: none;
+        margin-bottom: 20px;
+    }
+
+    .audioBook-container .thill-right-section .music-player{
+        height: 100%;
+    }
+
+    .audioBook-container .thill-right-section .music-player .song-info img{
+        width: 300px;
+        height: 190px;
+    }
+
+    .audioBook-container .thill-right-section .music-player .buttons i{
+        font-size: 22px;
+    }
+    .outer {
+        display: none; /* Hide outer on small screens */
+    }
+
+    .audioBook-container .thill-right-section {
+        padding: 10px;
+    }
+
+    .audioBook-container .thill-right-section .music-player {
+        height: 100%; /* Full height for music player on small screens */
+    }
+
+    .audioBook-container .thill-right-section .music-player .song-info img {
+        width: 100%; /* Make image responsive */
+        height: auto;
+    }
+}
+
+
+.audioBook-container .timeline {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.audioBook-container #progressBar {
+    flex: 1;
+    height: 5px;
+    background: #34495e;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.audioBook-container #progressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ecf0f1;
+    cursor: pointer;
+}
+
+.audioBook-container #progressBar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ecf0f1;
+    cursor: pointer;
+}
+
+.audioBook-container #currentTime, #duration {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+    margin: 0 10px;
+}

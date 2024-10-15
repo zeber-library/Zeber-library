@@ -1,0 +1,55 @@
+@media (max-width: 1024px) {
+    body .LibraryProfilePage .EditProfile form{
+        width: 100%;
+    }
+    
+    body .LibraryProfilePage .EditProfile .heading p{
+        font-size: small;
+        
+    }
+}
+.LibraryProfilePage .EditProfile{
+    background: #fff;
+}
+.LibraryProfilePage .EditProfile .heading p{
+    font-size: smaller;
+}
+.LibraryProfilePage .EditProfile form{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    gap: 10px;
+}
+.LibraryProfilePage .EditProfile form label span{
+    color: red;
+}
+.LibraryProfilePage .EditProfile form div{
+    gap: 5px;
+}
+.LibraryProfilePage .EditProfile form input{
+    padding: 12px;
+}
+
+.LibraryProfilePage .EditProfile .dateBirth{
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+}
+.LibraryProfilePage .EditProfile .dateBirth select,
+.LibraryProfilePage .EditProfile #Genre{
+    padding: 11px 10px;
+    
+    width: 100%;
+}
+.LibraryProfilePage .EditProfile .dateBirth select:nth-child(2){
+    width: 120%;
+}
+.LibraryProfilePage .EditProfile form button{
+    padding: 12px;
+    background: #5274FF;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    font-weight: 500;
+}
+

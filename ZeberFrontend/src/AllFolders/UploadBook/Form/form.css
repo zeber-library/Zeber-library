@@ -1,0 +1,283 @@
+/* FORM Container css*/
+.upload-book-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.upload-book-overlay .form-container {
+  padding:10px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 35rem;
+}
+
+.upload-book-overlay .close-button {
+  align-self: flex-end;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.upload-book-overlay .submitted-container {
+  padding: 2rem;
+  border-radius: 1.875rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.upload-book-overlay .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.upload-book-overlay .text {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.upload-book-overlay .form {
+  padding: 2rem;
+  border-radius: 1.875rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.upload-book-overlay .upload-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top:10px;
+}
+
+.upload-book-overlay .input-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top:10px;
+}
+
+.upload-book-overlay .input-group {
+  display: flex;
+  flex-direction: column;
+  margin-top:10px;
+}
+
+.upload-book-overlay .label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.upload-book-overlay .input {
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #f9fafb;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.upload-book-overlay .input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.upload-book-overlay .input:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/* New Styles from the EmailTrackingForm component */
+
+.upload-book-overlay .email-tracking-form-container {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.upload-book-overlay .email-tracking-success-message {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin-top: 1rem;
+}
+
+.upload-book-overlay .email-tracking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upload-book-overlay .email-tracking-label {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.upload-book-overlay .email-tracking-input {
+  font-size: 0.875rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  background-color: #f9fafb;
+}
+
+.upload-book-overlay .email-tracking-input:focus {
+  outline-color: #3b82f6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-book-overlay .email-tracking-input:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.upload-book-overlay .email-tracking-submit-button {
+  width: 100%;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.upload-book-overlay .email-tracking-submit-button:hover {
+  background-color: #2563eb;
+}
+
+.upload-book-overlay .email-tracking-error-message {
+  color: #ef4444;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* New Styles from the FileUpload component */
+
+.upload-book-overlay .file-upload-label {
+  height: 10.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #78716c;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: auto; /* Allow the width to adjust based on content */
+
+}
+
+.upload-book-overlay .file-upload-label:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.upload-book-overlay .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-book-overlay .upload-icon {
+  height: 5rem;
+  fill: #4b5563;
+}
+
+.upload-book-overlay .upload-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.upload-book-overlay .upload-text {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.upload-book-overlay .file-info {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.upload-book-overlay .file-input {
+  display: none;
+}
+
+
+
+
+/* FILE BUTTON UPLOAD */
+.upload-book-overlay .add-file-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+.upload-book-overlay .add-file-button:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  background-color: #2563eb;
+}
+
+.upload-book-overlay .add-file-button:focus {
+  opacity: 0.85;
+  box-shadow: none;
+}
+
+.upload-book-overlay .add-file-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.upload-book-overlay .add-file-button svg path {
+  stroke-width: 2;
+  stroke: #ffffff;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}

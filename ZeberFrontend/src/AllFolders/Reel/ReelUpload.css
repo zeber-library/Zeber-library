@@ -1,0 +1,95 @@
+/* ReelUpload.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e9ecef;
+  }
+  
+  .upload-box {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .upload-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .upload-box label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .upload-box input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .upload-box input[type="text"]:focus {
+    border-color: #007bff;
+  }
+  
+  .upload-box input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+  }
+  
+  .upload-box button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  .upload-box button:hover {
+    background-color: #0056b3;
+  }
+  
+  .upload-status {
+    margin-top: 20px;
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .upload-status.error {
+    color: #dc3545;
+  }
+  
+  /* Add responsiveness */
+  @media (max-width: 768px) {
+    .upload-box {
+      width: 300px;
+      padding: 20px;
+    }
+  }
+  
+  

@@ -1,0 +1,120 @@
+@media (max-width: 1024px) {
+    body .LibraryProfilePage .ProfilePages .Address .heading p{
+        font-size: small;
+    }
+    body .LibraryProfilePage .ProfilePages .Address form {
+        width: 100%;
+    }
+    body .LibraryProfilePage .ProfilePages .Address .submitted-address-box {
+        width: 100%;
+    }
+    body .LibraryProfilePage .ProfilePages .Address .submitted-address-box .DetaultAddress{
+     width: 90%;   
+     align-self: center;
+    }
+}
+
+.LibraryProfilePage .ProfilePages .Address {
+    background: #fff;
+}
+
+.LibraryProfilePage .ProfilePages .Address * {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.LibraryProfilePage .ProfilePages .Address .heading p{
+    font-size: smaller;
+}
+
+.LibraryProfilePage .ProfilePages .Address form {
+    width: 60%;
+    gap: 10px;
+}
+.LibraryProfilePage .ProfilePages .Address form .phone-input{
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.LibraryProfilePage .ProfilePages .Address form .phone-input select{
+    width: 35%;
+}
+.LibraryProfilePage .ProfilePages .Address form .phone-input input{
+    width: 100%;
+}
+
+.LibraryProfilePage .ProfilePages .Address button,
+.LibraryProfilePage .ProfilePages .Address form select,
+.LibraryProfilePage .ProfilePages .Address form input {
+    padding: 10px;
+}
+
+.LibraryProfilePage .ProfilePages .Address button {
+    background: #5274FF;
+    color: white;
+    font-weight: 600;
+    font-size: medium;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.LibraryProfilePage .ProfilePages .Address p.NoAddress {
+    border: none;
+    font-size: 45px;
+    text-align: center;
+    font-weight: 700;
+    color: #EEEEEE;
+}
+
+.LibraryProfilePage .ProfilePages .Address .addresses-list{
+    gap: 10px;
+}
+
+.LibraryProfilePage .ProfilePages .Address .submitted-address-box {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-transform: uppercase;
+    position: relative;
+    width: 80%;
+    gap: 5px;
+    
+}
+.LibraryProfilePage .ProfilePages .Address .submitted-address-box button{
+    padding: 8px;
+    width: 90%;
+    align-self: center;
+}
+
+.LibraryProfilePage .ProfilePages .Address .submitted-address-box p {
+    flex-direction: row;
+}
+
+.LibraryProfilePage .ProfilePages .Address .submitted-address-box .correct {
+    width: fit-content;
+    position: absolute;
+    gap: 10px;
+    top: 2px;
+    flex-direction: row;
+    right: 3px;
+}
+
+.LibraryProfilePage .ProfilePages .Address .submitted-address-box .correct span:hover{
+    scale: 1.1;
+}
+    .LibraryProfilePage .ProfilePages .Address .submitted-address-box .DetaultAddress{
+        font-weight: 600;
+        margin: 1% 0;
+        padding: 1%;
+        background: #05b405;
+        color: white;
+        width: 40%;
+        text-align: center;
+        justify-content: center;
+    }
