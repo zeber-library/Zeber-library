@@ -26,7 +26,7 @@ const uploadToCloudinary = (fileBuffer, fileName) => {
 // POST route to publish a new book
 router.post('/books', upload.fields([{ name: 'coverImages', maxCount: 5 }, { name: 'popularBooks', maxCount: 5 }]), async (req, res) => {
     try {
-        const { title, author, authorDescription, bookDescription, language, pages } = req.body;
+        const { title, author, authorDescription, bookDescription, language, pages, summary, category } = req.body;
 
         // Upload coverImages to Cloudinary
     const coverImageUploads = req.files['coverImages'] ? 
@@ -50,6 +50,8 @@ router.post('/books', upload.fields([{ name: 'coverImages', maxCount: 5 }, { nam
             pages,
             coverImages,
             popularBooks,
+            summary, 
+            category
         });
 
         await newBook.save();
@@ -191,4 +193,17 @@ router.get('/getbooks', async (req, res) => {
         res.status(500).json({ message: 'Failed to fetch books.' });
     }
 });
+
+router.get('/books', async (req, res) => {
+  const searchTerm = req.query.q || '';
+  try {
+    const books = await Book.find({
+      title: { $regex: searchTerm, $options: 'i' } // Case-insensitive search
+    });
+    res.json(books);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch books' });
+  }
+});
+
 module.exports = router;

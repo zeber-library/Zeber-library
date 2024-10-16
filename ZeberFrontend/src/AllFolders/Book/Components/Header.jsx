@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
 
 //to do --- update a tag to Link tag to some of the tag that have # href 
 //Header component 
 const Header = ({ isLiked, showPopup, togglePopup }) => {
-
+  const [searchTerm, setSearchTerm] = useState('');
   //useeffect to hide and show the popupcontainer
   useEffect(()=>{
       if(showPopup){
@@ -32,17 +32,21 @@ const Header = ({ isLiked, showPopup, togglePopup }) => {
           </Link>
 
           {/*search */}
-          <div className="navMiddle">
-            <input
-            
-              type="text"
-              id="search"
-              placeholder="Search your book here..."
-            />
-            <a href="#">
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </a>
-          </div>
+          <div className="searchBar">
+          <span>
+            <i className="fa fa-filter"></i>
+          </span>
+          <input
+            type="text"
+            placeholder="Search for books..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <span>
+          <Link to='/book-search' state={{searchTerm}}>
+          <i className="fa fa-magnifying-glass"></i></Link>
+          </span>
+        </div>
 
 
         {/**NAV-RIGHT section  */}

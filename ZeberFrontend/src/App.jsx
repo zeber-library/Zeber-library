@@ -11,6 +11,7 @@ import UploadForm from "./AllFolders/UploadBook/Form/UploadForm";
 import LibraryProfilePage from '../src/AllFolders/MyProfilePage/LibraryProfilePage';
 //import BuySellRoutes from "./AllFolders/buy-sell/BuySellRoutes";
 import HomeScreen from "./AllFolders/buy-sell/components/HomeScreen";
+import BookSearch from "./AllFolders/Library/Components/BookSearch";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
 
         {/* Book page */}
         <Route path="/book" element={<Book />} />
-
+         {/* Book search */}
+         <Route path="/book-search" element={<BookSearch/>}/>
         {/* Video page */}
         <Route path="/video" element={<Video />} />
 

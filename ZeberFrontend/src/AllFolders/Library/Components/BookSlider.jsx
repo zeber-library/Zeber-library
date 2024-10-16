@@ -1,74 +1,72 @@
-import React, { useRef,useState,useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import BookCard from "./BookCard";
-import SwiperComponent from './SwiperComponent';
+import SwiperComponent from "./SwiperComponent";
 
-
-
-
-
-//component 
+//component
 const BookSlider = ({ handleBookSelect }) => {
   const [books, setBooks] = useState([]);
   // const [bookImages, setBookImages] = useState([]);
-  useEffect(
-    ()=>{
-      //fetching the books from backend 
-      fetch("http://localhost:5000/api/getbooks")
-      .then((res)=>res.json())
-      .then((data)=>{
+  useEffect(() => {
+    //fetching the books from backend
+    fetch("http://localhost:5000/api/getbooks")
+      .then((res) => res.json())
+      .then((data) => {
         setBooks(data);
         // setBookImages(data[0].coverImages);
-      })
-    },[]
-  )
+      });
+  }, []);
   // console.log(books);
-  //ref for all the book container for sliding 
+  //ref for all the book container for sliding
   const trendingSliderRef = useRef(null);
   const recentSliderRef = useRef(null);
   const beginnersSliderRef = useRef(null);
   const intermediateSliderRef = useRef(null);
   const advanceSliderRef = useRef(null);
 
-  //function to handle the arrows right and left 
+  //function to handle the arrows right and left
   const handleArrowClicks = (sliderRef, direction) => {
     const slider = sliderRef.current;
-    const slideWidth = slider.querySelector('.slide').offsetWidth + 25;
+    const slideWidth = slider.querySelector(".slide").offsetWidth + 25;
 
-    if (direction === 'left') {
+    if (direction === "left") {
       if (slider.scrollLeft === 0) {
         slider.scrollTo({
           left: slider.scrollWidth - slider.clientWidth,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       } else {
         slider.scrollBy({
           left: -slideWidth,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       }
-    } else if (direction === 'right') {
-      if (Math.ceil(slider.scrollLeft + slider.clientWidth) >= slider.scrollWidth) {
+    } else if (direction === "right") {
+      if (
+        Math.ceil(slider.scrollLeft + slider.clientWidth) >= slider.scrollWidth
+      ) {
         slider.scrollTo({
           left: 0,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       } else {
         slider.scrollBy({
           left: slideWidth,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       }
     }
   };
 
-
-  //return statement 
+  //return statement
   return (
     <>
       {/* Trending Book Slider */}
       <div className="BookContainer trending">
         <div className="TrendingBooks Books">
-          <button className="arrow-left" onClick={() => handleArrowClicks(trendingSliderRef, 'left')}>
+          <button
+            className="arrow-left"
+            onClick={() => handleArrowClicks(trendingSliderRef, "left")}
+          >
             <i className="fa fa-chevron-left"></i>
           </button>
           <div className="headingBooks">
@@ -84,7 +82,7 @@ const BookSlider = ({ handleBookSelect }) => {
           <div className="slider" ref={trendingSliderRef}>
             {/*loop for each book type  */}
             {books.map((book, index) => (
-              //Book Component 
+              //Book Component
               <BookCard
                 key={index}
                 book={book}
@@ -93,19 +91,25 @@ const BookSlider = ({ handleBookSelect }) => {
               />
             ))}
           </div>
-          <button className="arrow-right" onClick={() => handleArrowClicks(trendingSliderRef, 'right')}>
+          <button
+            className="arrow-right"
+            onClick={() => handleArrowClicks(trendingSliderRef, "right")}
+          >
             <i className="fa fa-chevron-right"></i>
           </button>
         </div>
       </div>
 
       {/*Swiper component  */}
-      <SwiperComponent/>
+      <SwiperComponent />
 
       {/* Recent Books Slider */}
       <div className="BookContainer">
         <div className="RecentBooks Books">
-          <button className="arrow-left" onClick={() => handleArrowClicks(recentSliderRef, 'left')}>
+          <button
+            className="arrow-left"
+            onClick={() => handleArrowClicks(recentSliderRef, "left")}
+          >
             <i className="fa fa-chevron-left"></i>
           </button>
           <div className="headingBooks">
@@ -127,7 +131,10 @@ const BookSlider = ({ handleBookSelect }) => {
               />
             ))}
           </div>
-          <button className="arrow-right" onClick={() => handleArrowClicks(recentSliderRef, 'right')}>
+          <button
+            className="arrow-right"
+            onClick={() => handleArrowClicks(recentSliderRef, "right")}
+          >
             <i className="fa fa-chevron-right"></i>
           </button>
         </div>
@@ -136,11 +143,14 @@ const BookSlider = ({ handleBookSelect }) => {
       {/* Beginner Books Slider */}
       <div className="BookContainer">
         <div className="ForBeginners Books">
-          <button className="arrow-left" onClick={() => handleArrowClicks(beginnersSliderRef, 'left')}>
+          <button
+            className="arrow-left"
+            onClick={() => handleArrowClicks(beginnersSliderRef, "left")}
+          >
             <i className="fa fa-chevron-left"></i>
           </button>
           <div className="headingBooks">
-            <h3>Beginner Books</h3>
+            <h3>Business Essentials for Beginners</h3>
             <div className="ReadMore">
               <a href="#">
                 <span>
@@ -158,7 +168,10 @@ const BookSlider = ({ handleBookSelect }) => {
               />
             ))}
           </div>
-          <button className="arrow-right" onClick={() => handleArrowClicks(beginnersSliderRef, 'right')}>
+          <button
+            className="arrow-right"
+            onClick={() => handleArrowClicks(beginnersSliderRef, "right")}
+          >
             <i className="fa fa-chevron-right"></i>
           </button>
         </div>
@@ -167,11 +180,84 @@ const BookSlider = ({ handleBookSelect }) => {
       {/* Intermediate Books Slider */}
       <div className="BookContainer">
         <div className="ForIntermediate Books">
+          <button
+            className="arrow-left"
+            onClick={() => handleArrowClicks(intermediateSliderRef, "left")}
+          >
+            <i className="fa fa-chevron-left"></i>
+          </button>
+          <div className="headingBooks">
+            <h3>Intermediate Business Strategies</h3>
+            <div className="ReadMore">
+              <a href="#">
+                <span>
+                  Read More <i className="fa fa-chevron-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div className="slider" ref={intermediateSliderRef}>
+            {books.map((book, index) => (
+              <BookCard
+                key={index}
+                book={book}
+                handleBookSelect={handleBookSelect}
+              />
+            ))}
+          </div>
+          <button
+            className="arrow-right"
+            onClick={() => handleArrowClicks(intermediateSliderRef, "right")}
+          >
+            <i className="fa fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      {/* Advanced Books Slider */}
+      <div className="BookContainer">
+        <div className="ForAdvance Books">
+          <button
+            className="arrow-left"
+            onClick={() => handleArrowClicks(advanceSliderRef, "left")}
+          >
+            <i className="fa fa-chevron-left"></i>
+          </button>
+          <div className="headingBooks">
+            <h3>Advanced Business Mastery</h3>
+            <div className="ReadMore">
+              <a href="#">
+                <span>
+                  Read More <i className="fa fa-chevron-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div className="slider" ref={advanceSliderRef}>
+            {books.map((book, index) => (
+              <BookCard
+                key={index}
+                book={book}
+                handleBookSelect={handleBookSelect}
+              />
+            ))}
+          </div>
+          <button
+            className="arrow-right"
+            onClick={() => handleArrowClicks(advanceSliderRef, "right")}
+          >
+            <i className="fa fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+        {/*Finance & Investment */}
+        <div className="BookContainer">
+        <div className="ForIntermediate Books">
           <button className="arrow-left" onClick={() => handleArrowClicks(intermediateSliderRef, 'left')}>
             <i className="fa fa-chevron-left"></i>
           </button>
           <div className="headingBooks">
-            <h3>Intermediate Books</h3>
+            <h3>Finance & Investment</h3>
             <div className="ReadMore">
               <a href="#">
                 <span>
@@ -194,15 +280,14 @@ const BookSlider = ({ handleBookSelect }) => {
           </button>
         </div>
       </div>
-
-      {/* Advanced Books Slider */}
-      <div className="BookContainer">
-        <div className="ForAdvance Books">
-          <button className="arrow-left" onClick={() => handleArrowClicks(advanceSliderRef, 'left')}>
+      {/* Marketing & Sales Mastery */}
+        <div className="BookContainer">
+        <div className="ForIntermediate Books">
+          <button className="arrow-left" onClick={() => handleArrowClicks(intermediateSliderRef, 'left')}>
             <i className="fa fa-chevron-left"></i>
           </button>
           <div className="headingBooks">
-            <h3>Advanced Books</h3>
+            <h3>Marketing & Sales Mastery</h3>
             <div className="ReadMore">
               <a href="#">
                 <span>
@@ -211,7 +296,7 @@ const BookSlider = ({ handleBookSelect }) => {
               </a>
             </div>
           </div>
-          <div className="slider" ref={advanceSliderRef}>
+          <div className="slider" ref={intermediateSliderRef}>
             {books.map((book, index) => (
               <BookCard
                 key={index}
@@ -220,7 +305,37 @@ const BookSlider = ({ handleBookSelect }) => {
               />
             ))}
           </div>
-          <button className="arrow-right" onClick={() => handleArrowClicks(advanceSliderRef, 'right')}>
+          <button className="arrow-right" onClick={() => handleArrowClicks(intermediateSliderRef, 'right')}>
+            <i className="fa fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+        {/* Leadership & Management */}
+        <div className="BookContainer">
+        <div className="ForIntermediate Books">
+          <button className="arrow-left" onClick={() => handleArrowClicks(intermediateSliderRef, 'left')}>
+            <i className="fa fa-chevron-left"></i>
+          </button>
+          <div className="headingBooks">
+            <h3>Leadership & Management</h3>
+            <div className="ReadMore">
+              <a href="#">
+                <span>
+                  Read More <i className="fa fa-chevron-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div className="slider" ref={intermediateSliderRef}>
+            {books.map((book, index) => (
+              <BookCard
+                key={index}
+                book={book}
+                handleBookSelect={handleBookSelect}
+              />
+            ))}
+          </div>
+          <button className="arrow-right" onClick={() => handleArrowClicks(intermediateSliderRef, 'right')}>
             <i className="fa fa-chevron-right"></i>
           </button>
         </div>

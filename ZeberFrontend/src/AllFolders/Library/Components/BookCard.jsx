@@ -16,7 +16,7 @@ const BookCard = ({
       }}
     >
       <div style={{display:"flex"}}>
-        <img src={book.coverImages[0]} style={{height:'6rem'}} alt="Books" />
+        <img src={book.coverImages[0]} style={{height:'10rem',width:'7rem'}} alt="Books" />
       </div>
       <div className="heading">
         <h4>Featured Books</h4>

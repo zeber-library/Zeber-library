@@ -1,0 +1,129 @@
+
+  
+
+  
+/* Overall header styling */
+header {
+  background-color: #ffffff; /* Light theme background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 10px 20px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+header.dark-mode {
+  background-color: #1a1a1a; /* Dark mode background */
+  color: #f0f0f0;
+}
+
+.navBar {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Sidebar toggle button */
+.toggle span {
+ display: none;
+}
+
+
+.logo img {
+  width: 120px;
+  height: auto;
+}
+
+/* Search bar styling */
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 5px 10px;
+  border-radius: 30px;
+  width: 300px;
+}
+
+.searchBar input {
+  border: none;
+  background: none;
+  margin-left: 10px;
+  outline: none;
+  width: 100%;
+  color: #333;
+}
+
+.searchBar input::placeholder {
+  color: #999;
+}
+
+.searchBar span {
+  color: #999;
+  cursor: pointer;
+}
+
+.searchBar span:hover {
+  color: #007bff;
+}
+
+header.dark-mode .searchBar {
+  background-color: #333;
+}
+
+header.dark-mode .searchBar input {
+  color: #f0f0f0;
+}
+
+header.dark-mode .searchBar span {
+  color: #bbb;
+}
+
+/* Icons Section */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.upload {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.upload:hover {
+  background-color: #0056b3;
+}
+
+.upload .text {
+  margin-left: 5px;
+}
+
+.subIcons {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.subIcons span {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+}
+
+.subIcons span:hover {
+  color: #007bff;
+}
+
+header.dark-mode .subIcons span {
+  color: #f0f0f0;
+}
+
+header.dark-mode .subIcons span:hover {
+  color: #ffd700;
+}
