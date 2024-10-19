@@ -1,0 +1,208 @@
+:root {
+    --white-color: #fff;
+    --blue-color: #4070f4;
+    --grey-color: #000000;
+    --black-color: #000;
+    --grey-color-light: #aaa;
+  }
+.navbar-container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+
+ /* NavBar */
+.navbar-container nav.navBar {
+    display: grid;
+    grid-template-columns: 10% 55% 35%;
+    height: 10vh;
+    width: 100%;
+    place-items: center;
+    padding: 0 2%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    box-shadow: 1px 0 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .navbar-container nav.navBar .toggle {
+    display: none;
+  }
+  
+  .navbar-container nav.navBar .toggle span {
+    font-size: 19px;
+  }
+  
+  .navbar-container nav.navBar .logo img {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .navbar-container nav.navBar .searchBar {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    height: 50%;
+    justify-self: end;
+    place-items: center;
+    gap: 0;
+    padding: 2px 10px;
+    border-radius: 45px;
+    border: 1px solid black;
+  }
+  
+  .navbar-container nav.navBar .searchBar span {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .navbar-container nav.navBar .searchBar span:hover {
+    color: var(--blue-color);
+  }
+  
+  .navbar-container nav.navBar .searchBar input {
+    width: 100%;
+    font-size: 0.9rem;
+    border: none;
+    background: transparent;
+  }
+  
+  .navbar-container nav.navBar .searchBar input {
+    border: none;  /* Ensures no border on focus */
+    outline: none;
+  }
+  
+
+
+  .navbar-container nav.navBar .icons {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    width: 90%;
+    align-items: center;
+  }
+  
+  .navbar-container nav.navBar .icons .upload {
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    display: flex;
+    gap: 10px;
+    color: var(--blue-color);
+    align-items: center;
+    cursor: pointer;
+    background: #eee;
+  }
+  
+  .navbar-container nav.navBar .icons .upload span:nth-child(2),
+  .navbar-container nav.navBar .icons .upload span:nth-child(3) {
+    font-size: 12px;
+    color: #494949;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar-container nav.navBar .icons .upload span:nth-child(3) {
+    display: none;
+  }
+  
+  .navbar-container nav.navBar .icons .upload:hover {
+    background: var(--blue-color);
+  }
+  
+  .navbar-container nav.navBar .icons .upload:hover span {
+    color: white;
+  }
+  
+  .navbar-container nav.navBar .icons .subIcons {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .navbar-container nav.navBar .icons .subIcons * {
+    cursor: pointer;
+  }
+  
+  .navbar-container nav.navBar .icons .subIcons span:hover {
+    color: var(--blue-color);
+  }
+  
+  
+  .navbar-container.dark nav.navBar {
+    background: var(--black-color);
+    color: white;
+  }
+  
+  .navbar-container.dark nav.navBar .searchBar {
+    background: darkslategrey;
+  }
+  
+  .navbar-container.dark nav.navBar .searchBar input {
+    color: white;
+  }
+  
+  .navbar-container.dark nav.navBar .upload {
+    background: darkgrey;
+    color: white;
+  }
+  
+  .navbar-container.dark nav.navBar .upload:hover span:nth-child(2),
+  .navbar-container.dark nav.navBar .upload:hover span {
+    color: #000;
+  }
+  
+  .navbar-container.dark nav.navBar .upload span:nth-child(2) {
+    color: white;
+  }
+  
+  @media (max-width: 1025px) {
+    .navbar-container  nav.navBar {
+      width: 95%;
+      overflow: hidden;
+      display: flex;
+      position: fixed;
+      padding-bottom: 5vh;
+      top: 0;
+      justify-content: space-between;
+    }
+  
+    .navbar-container  nav.navBar .toggle {
+      display: block;
+    }
+  
+    .navbar-container  nav.navBar .logo a img {
+      width: 115px;
+    }
+  
+    .navbar-container  nav.navBar .searchBar {
+      position: fixed;
+      top: 9vh;
+      width: 90%;
+      padding: 5px;
+      height: fit-content;
+  
+    }
+  
+    .navbar-container  nav.navBar .icons {
+      width: auto;
+      gap: 10px;
+    }
+  
+    .navbar-container  nav.navBar .icons .subIcons {
+      gap: 10px;
+    }
+  }
+  
+  
+  
+  
+  

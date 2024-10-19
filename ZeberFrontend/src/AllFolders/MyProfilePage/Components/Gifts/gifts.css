@@ -1,0 +1,21 @@
+.LibraryProfilePage .gifts{
+    width: 100%;
+    background: #ffffff;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.LibraryProfilePage .gifts svg{
+    color: #5274FF;
+    font-size: 75px;
+}
+.LibraryProfilePage .gifts h2{
+    text-align: left;
+    width: 100%;
+}
+.LibraryProfilePage .gifts span{
+    font-size: 45px;
+    width: 70px;
+    text-align: center;
+}

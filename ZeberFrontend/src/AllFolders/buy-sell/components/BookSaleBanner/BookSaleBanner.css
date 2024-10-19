@@ -1,0 +1,119 @@
+.banner2 {
+  padding: 20px;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #E2BFD9;
+  border-radius: 30px;
+  padding: 20px;
+  gap: 50px; /* Reduce the gap for better layout */
+}
+
+.banner-content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.banner-content h2 {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+
+.banner-content p {
+  font-size: 20px;
+  color: white;
+}
+
+.shop-now-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.browse-by-hashtag {
+  margin-top: 50px;
+}
+
+.hashtag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hashtag-list li {
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #D1E9F6;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px; /* Reduce gap for tablets */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .banner-content h2 {
+    font-size: 22px; /* Adjust font size for tablets */
+  }
+
+  .banner-content p {
+    font-size: 18px; /* Adjust font size for tablets */
+  }
+
+  .shop-now-button {
+    padding: 10px 15px; /* Adjust button padding */
+  }
+
+  .hashtag-list li {
+    font-size: 18px; /* Adjust font size for tablets */
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .banner-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px; /* Further reduce gap for mobile */
+    padding: 10px; /* Reduce padding for mobile */
+  }
+
+  .banner-content h2 {
+    font-size: 20px; /* Reduce heading font size */
+  }
+
+  .banner-content p {
+    font-size: 16px; /* Reduce paragraph font size */
+  }
+
+  .shop-now-button {
+    font-size: 16px;
+    padding: 8px 12px; /* Reduce button size */
+  }
+
+  /* .hashtag-list {
+    flex-direction: column;
+  } */
+
+  .hashtag-list li {
+    font-size: 16px; /* Adjust font size for mobile */
+    padding: 4px 8px;
+  }
+}
