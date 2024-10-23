@@ -78,27 +78,27 @@ const AudioBookPlayer = () => {
     console.log(isSidebarOpen);
   };
 
-    //! Effect to handle window resizing and set sidebar to false if < 992px
-    useEffect(() => {
-      const handleResize = () => {
-        if (window.innerWidth < 992) {
-          setIsSidebarOpen(false); // Close sidebar on smaller screens
-        } else {
-          setIsSidebarOpen(true); // Keep sidebar open on larger screens
-        }
-      };
-  
-      // Initial check on load
-      handleResize();
-  
-      // Add event listener for window resize
-      window.addEventListener("resize", handleResize);
-  
-      // Cleanup event listener on component unmount
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, []); // Empty array ensures this effect only runs on mount and unmount
+  //! Effect to handle window resizing and set sidebar to false if < 992px
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 992) {
+        setIsSidebarOpen(false); // Close sidebar on smaller screens
+      } else {
+        setIsSidebarOpen(true); // Keep sidebar open on larger screens
+      }
+    };
+
+    // Initial check on load
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); // Empty array ensures this effect only runs on mount and unmount
 
 
   //!useEffect for

@@ -62,7 +62,7 @@ const PlayList = ({
                                 <img src={song.coverPath} alt={song.songName}/>
                                 <div className="details">
                                     <h5>{song.songName}</h5>
-                                    <p>song name</p>
+                                    <p>{song.author}</p>
                                 </div>
                             </div>
                             <div className="actions">
