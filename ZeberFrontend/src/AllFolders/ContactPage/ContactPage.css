@@ -1,13 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400&display=swap");
 
+body {
+  background-color: black;
+}
 
-.contact_us_container{
+.contact_us_container {
   background-color: black;
   margin: 0;
   padding: 0;
   height: 100%; /* Full height */
   font-family: "Poppins", sans-serif;
 }
+
+.text-white {
+  color: white; /* Keep the existing color */
+}
+
+.text-white p {
+  font-size: 2rem; /* Adjust the size as needed */
+  font-weight: bold; /* Ensure the text is bold */
+}
+
 
 .container {
   max-width: 1200px;
@@ -16,8 +29,8 @@
 
 .main_contact-us_container {
   display: flex;
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
+  height: auto; /* Full viewport height */
+  width: auto; /* Full viewport width */
   flex-direction: column;
   background-color: black;
   justify-content: flex-end; /* Align content to the bottom */
@@ -25,13 +38,12 @@
 
 /* Form and Image Container */
 
-
 /* Left Image Container */
 .main_contact-us_container .left_image_container img {
-  max-width: 500px;
-  width: 100%;
+  max-width: 600px;
+  width: 600px;
   height: auto;
- margin-bottom: -440px;
+  margin-bottom: -630px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

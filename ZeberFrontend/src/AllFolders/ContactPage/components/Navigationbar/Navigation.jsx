@@ -25,7 +25,7 @@ function Navigation() {
             <Link className={style.activePage} to="/">Home</Link>
           </li>
           <li>
-            <Link to="/video">video library</Link>
+            <Link to="/video">Video Library</Link>
           </li>
           <li>
             <Link to="/audio-book">Audio library</Link>
@@ -43,13 +43,13 @@ function Navigation() {
                 <a href="#vision">Development</a>
                 <a href="#history">Mentorship</a>
                 <a href="#history">E-books</a>
-                <a href="#history">reels</a>
+                <a href="#history">Reels</a>
               </div>
             </div>
           </li>
        
           <li className={style.dNone}>
-            <Link to="/reels">reels</Link>
+            <Link to="/reels">Reels</Link>
           </li>
           <li>
             <Link to="/">About Us</Link>
@@ -61,7 +61,7 @@ function Navigation() {
 
         <button className={style.pixBtn + ' ' + style.submitBtn}>
           <a
-            style={{ color: '#fff', fontWeight: 600, fontSize: '14px' }}
+            style={{ color: '#fff', fontWeight: 600, fontSize: '14px', textDecoration:'none' }}
             href="https://www.www.zeber.in/quote"
           >
            Sign up

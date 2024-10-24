@@ -1,16 +1,17 @@
 /* General Container */
 .contactContainer {
-  max-width: 850px; /* Reduced width */
-  margin-left: 580px;
+  width: 800px; /* Reduced width */
+  margin-left: 600px;
   display: flex;
   align-items: flex-start; /* Align to the top */
-  padding: 20px;
+  padding: 20px 0px 0px 30px;
   position: relative;
-  background-color: #111010; /* Dark background */
-  top: -90px; /* Gap from the top (adjust based on header height) */
-  left: 20px; /* Slightly positioned to the left */
+  background-color: #111010; /* transparent background */
+  top: 20px; /* Gap from the top (adjust based on header height) */
+  left: 0px; /* Slightly positioned to the left */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   box-sizing: content-box;
+  border-radius: 10px;
 }
 
 /* Top Button Styling */
@@ -38,7 +39,7 @@
 /* Form Fields Styling */
 .form_fields {
   display: flex;
-  width: 100%;
+  width: auto;
   gap: 20px;
   flex-direction: column;
   position: relative;
@@ -133,11 +134,9 @@
 }
 
 .img_box img {
-  max-width: 100%; /* Ensure the image is responsive */
+  width: 350px; /* Ensure the image is responsive */
   height: auto;
-  margin-top: 40px;
-  margin-left: 49px; /* Maintain aspect ratio */
-  border-radius: 10px; /* Rounded corners for the image */
+  margin: 50px 0px 0px 10px;/* Maintain aspect ratio */
 }
 .submit_button_container {
   display: flex;

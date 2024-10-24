@@ -121,6 +121,7 @@
   padding: 12px 24px;
   cursor: pointer;
   border-radius: 25px; /* More rounded corners */
+  text-decoration: none;
   font-size: 14px;
   margin-left: 15px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
