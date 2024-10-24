@@ -15,8 +15,8 @@ const bookSchema = new mongoose.Schema({
     bookDescription: { type: String, required: true },
     language: { type: String, required: true },
     pages: { type: Number, required: true },
-    summary: { type: String, required: true }, // Added summary field
-    category: { type: String, required: true }, // Added category field
+    summary: { type: String}, // Added summary field
+    category: { type: String }, // Added category field
     coverImages: [{ type: String }], // Array of file paths
     popularBooks: [{ type: String }], // Array of file paths
     comments: [commentSchema], // Array of comments

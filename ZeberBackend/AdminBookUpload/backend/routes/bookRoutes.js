@@ -1,6 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const Book = require('../models/book');
+const mongoose = require('mongoose');
 const cloudinary = require('cloudinary').v2;
 const router = express.Router();
 require("dotenv").config();
@@ -61,62 +62,77 @@ router.post('/books', upload.fields([{ name: 'coverImages', maxCount: 5 }, { nam
         res.status(500).json({ message: 'Failed to publish the book.' });
     }
 });
-// Route to add a comment to a specific book
+// Route to add a comment to a book
 router.post('/:bookId/comments', async (req, res) => {
   try {
-      const { text, userId } = req.body; // Assuming you're getting the userId from a request
-      const book = await Book.findById(req.params.bookId);
+    const { text, userId } = req.body;
+ 
+    // Validate userId and bookId
+    if (!mongoose.Types.ObjectId.isValid(userId) || !mongoose.Types.ObjectId.isValid(req.params.bookId)) {
+      return res.status(400).json({ message: 'Invalid user or book ID' });
+    }
+    
+    const book = await Book.findById(req.params.bookId);
+    if (!book) {
+      return res.status(404).json({ message: 'Book not found' });
+    }
 
-      if (!book) {
-          return res.status(404).json({ message: 'Book not found' });
-      }
+    // Add the comment to the book
+    const newComment = { user: userId, text, likes: [] };
 
-      // Add the comment to the book
-      const newComment = { user: userId, text, likes: [] };
-      book.comments.push(newComment);
-      await book.save();
+    book.comments.push(newComment);
+        await book.save();
 
-      res.status(201).json(book);
+        res.status(201).json(book);
   } catch (error) {
-      res.status(500).json({ message: 'Error adding comment', error });
+    console.error('Error adding comment:', error);
+    res.status(500).json({ message: 'Error adding comment', error });
   }
 });
-
-// routes/book.js
 
 // Route to add or update a rating for a book
 router.post('/:bookId/rating', async (req, res) => {
   try {
-      const { rating, userId } = req.body;  // User's rating and userId from the request body
-      const book = await Book.findById(req.params.bookId);
+    const { rating, userId } = req.body;
 
-      if (!book) {
-          return res.status(404).json({ message: 'Book not found' });
-      }
+    // Validate userId, bookId, and rating value
+    if (!mongoose.Types.ObjectId.isValid(userId) || !mongoose.Types.ObjectId.isValid(req.params.bookId)) {
+      return res.status(400).json({ message: 'Invalid user or book ID' });
+    }
+    if (rating < 1 || rating > 5) {
+      return res.status(400).json({ message: 'Rating must be between 1 and 5' });
+    }
 
-      // Check if the user has already rated the book
-      const existingRating = book.stars.find(star => star.user.toString() === userId);
-      if (existingRating) {
-          // Update the existing rating
-          existingRating.rating = rating;
-      } else {
-          // Add a new rating
-          book.stars.push({ user: userId, rating });
-      }
+    const book = await Book.findById(req.params.bookId);
+    if (!book) {
+      return res.status(404).json({ message: 'Book not found' });
+    }
 
-      await book.save();
-      res.status(201).json({ message: 'Rating submitted successfully', book });
+    const existingRating = book.stars.find(star => star.user.toString() === userId);
+    if (existingRating) {
+      existingRating.rating = rating; // Update existing rating
+    } else {
+      book.stars.push({ user: userId, rating }); // Add new rating
+    }
+
+    await book.save();
+    res.status(201).json({ message: 'Rating submitted successfully', book });
   } catch (error) {
-      res.status(500).json({ message: 'Error submitting rating', error });
+    res.status(500).json({ message: 'Error submitting rating', error });
   }
 });
 
 // Route to like a comment
 router.post('/:bookId/comments/:commentId/like', async (req, res) => {
   try {
-    const { userId } = req.body;  // Assuming userId is sent in request body
-    const book = await Book.findById(req.params.bookId);
+    const { userId } = req.body;
 
+    // Validate userId, bookId, and commentId
+    if (!mongoose.Types.ObjectId.isValid(userId) || !mongoose.Types.ObjectId.isValid(req.params.bookId) || !mongoose.Types.ObjectId.isValid(req.params.commentId)) {
+      return res.status(400).json({ message: 'Invalid user, book, or comment ID' });
+    }
+
+    const book = await Book.findById(req.params.bookId);
     if (!book) {
       return res.status(404).json({ message: 'Book not found' });
     }
@@ -126,7 +142,6 @@ router.post('/:bookId/comments/:commentId/like', async (req, res) => {
       return res.status(404).json({ message: 'Comment not found' });
     }
 
-    // Check if user has already liked the comment
     if (comment.likes.includes(userId)) {
       return res.status(400).json({ message: 'Already liked this comment' });
     }
@@ -140,69 +155,71 @@ router.post('/:bookId/comments/:commentId/like', async (req, res) => {
   }
 });
 
-// Route to get comments for a specific book without populating the user
+// Route to get comments for a specific book
 router.get('/:bookId/comments', async (req, res) => {
   try {
-      const book = await Book.findById(req.params.bookId);
+    if (!mongoose.Types.ObjectId.isValid(req.params.bookId)) {
+      return res.status(400).json({ message: 'Invalid book ID' });
+    }
 
-      if (!book) {
-          return res.status(404).json({ message: 'Book not found' });
-      }
-
-      // Return the comments for the book
-      res.status(200).json({ comments: book.comments });
-  } catch (error) {
-      res.status(500).json({ message: 'Error fetching comments', error });
-  }
-});
-
-
-// Route to fetch ratings for a specific book
-router.get('/:bookId/ratings', async (req, res) => {
-  try {
     const book = await Book.findById(req.params.bookId);
-
     if (!book) {
       return res.status(404).json({ message: 'Book not found' });
     }
 
-    // Calculate total and average ratings
+    res.status(200).json({ comments: book.comments });
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching comments', error });
+  }
+});
+
+// Route to fetch ratings for a specific book
+router.get('/:bookId/ratings', async (req, res) => {
+  try {
+    if (!mongoose.Types.ObjectId.isValid(req.params.bookId)) {
+      return res.status(400).json({ message: 'Invalid book ID' });
+    }
+
+    const book = await Book.findById(req.params.bookId);
+    if (!book) {
+      return res.status(404).json({ message: 'Book not found' });
+    }
+
     const totalRatings = book.stars.length;
     const averageRating = totalRatings > 0
       ? (book.stars.reduce((acc, star) => acc + star.rating, 0) / totalRatings).toFixed(2)
       : 0;
 
-    // Return the ratings
     res.status(200).json({
       totalRatings,
       averageRating,
-      ratings: book.stars  // Send the ratings array
+      ratings: book.stars // Send the ratings array
     });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Failed to fetch ratings.' });
+    res.status(500).json({ message: 'Failed to fetch ratings', error });
   }
 });
 
-router.get('/getbooks', async (req, res) => {
-    try {
-        const books = await Book.find();
-        res.status(200).json(books);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Failed to fetch books.' });
-    }
-});
-
+// Route to fetch all books (optional search term)
 router.get('/books', async (req, res) => {
   const searchTerm = req.query.q || '';
   try {
     const books = await Book.find({
-      title: { $regex: searchTerm, $options: 'i' } // Case-insensitive search
+      title: { $regex: searchTerm, $options: 'i' } // Case-insensitive search by title
     });
-    res.json(books);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
+    res.status(200).json(books);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to fetch books', error });
+  }
+});
+
+// Route to fetch all books without search term
+router.get('/getbooks', async (req, res) => {
+  try {
+    const books = await Book.find();
+    res.status(200).json(books);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to fetch books', error });
   }
 });
 

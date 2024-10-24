@@ -50,10 +50,11 @@ const FourthPage = ({ book }) => {
     }
 
     try {
-      await axios.post(`http://localhost:5000/api/${bookId}/comments`, {
+      const data= await axios.post(`http://localhost:5000/api/${bookId}/comments`, {
         text: comment,
         userId,
       });
+      console.log(data)
       setComment(""); // Clear the form
       setError(""); // Clear any previous error
     } catch (error) {
@@ -123,7 +124,7 @@ const FourthPage = ({ book }) => {
 
   useEffect(() => {
     // Listen for real-time likes
-    socket.current = io("http://localhost:8080");
+    socket.current = io("http://localhost:5000");
     socket.current.on("commentLiked", (data) => {
       // Update the comment's like count in real-time
       setComments((prevComments) =>
@@ -156,7 +157,7 @@ const FourthPage = ({ book }) => {
   // Connect to Socket.IO and listen for new comments
   useEffect(() => {
     // Initialize socket connection
-    socket.current = io("http://localhost:8080"); // Adjust the URL to your server
+    socket.current = io("http://localhost:5000"); // Adjust the URL to your server
 
     // Listen for real-time updates when a new comment is added
     socket.current.on("commentAdded", (newComment) => {
