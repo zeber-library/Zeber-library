@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 import axios from "axios";
-
+import {useNavigate} from 'react-router-dom'
 // Initialize the socket
 const socket = io("http://localhost:8080", {
   reconnection: true,
@@ -16,11 +16,15 @@ function CommentBox({
   const [newComment, setNewComment] = useState('');
   const [error, setError] = useState('');
   const userId = "66ddfda258de85a04f9880fb";
+  const navigate=useNavigate()
   // Fetch initial comments from the server when the component mounts
   useEffect(() => {
     const fetchComments = async () => {
       try {
         const response = await axios.get(`http://localhost:8080/api/reels/${reelId}/getComments`);
+        if(!response.ok){
+          navigate('*')
+        }
         setComments(response.data.comments);
       } catch (err) {
         console.error('Error fetching comments', err);
@@ -50,7 +54,9 @@ function CommentBox({
 
     try {
       const response = await axios.post(`http://localhost:8080/api/reels/${reelId}/comment`, { userId:userId,text: newComment});
-      console.log(response)
+      if(!response.ok){
+        navigate('*')
+      }
       setComments(response.data.reel.comments); // Update comments
       setNewComment(''); // Clear the textarea
       setError('');

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation,useNavigate } from 'react-router-dom';
 import Header from './Header';
 import "./BookSearch.css"
 const BookSearch = () => {
@@ -7,10 +7,14 @@ const BookSearch = () => {
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [books, setBooks] = useState([]);
    const location=useLocation();
+   const navigate=useNavigate()
    const { searchTerm } = location.state || {}
    useEffect(()=>{
     const fetchAllBooks=async()=>{
         const response = await fetch(`http://localhost:5000/api/getbooks`);
+        if(!response.ok){
+          navigate('*')
+        }
         const data = await response.json();
         setBooks(data);
     }
@@ -20,6 +24,9 @@ const BookSearch = () => {
    useEffect(() => {
     const fetchBooks = async () => {
       const response = await fetch(`http://localhost:5000/api/books?q=${searchTerm}`);
+      if(!response.ok){
+        navigate('*')
+      }
       const data = await response.json();
       setFilteredBooks(data);
     };

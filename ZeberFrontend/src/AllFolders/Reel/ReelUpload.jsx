@@ -35,11 +35,14 @@ const navigate=useNavigate();
           'Content-Type': 'multipart/form-data',
         },
       });
-
+      if(!response.ok){
+        navigate('*')
+      }
       setUploadStatus('Reel uploaded successfully!');
       console.log('Uploaded reel data:', response.data);
     } catch (error) {
       console.error('Error uploading reel:', error);
+    
       setUploadStatus('Error uploading reel.');
     }
     navigate('/reels');

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { format } from "timeago.js";
+import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client"; // Import socket.io-client
 const FourthPage = ({ book }) => {
   const [selectedRating, setSelectedRating] = useState(0); // Store the selected rating
@@ -11,6 +12,7 @@ const FourthPage = ({ book }) => {
   const userId = "66ddfda258de85a04f9880fb"; // Replace with actual user ID from your auth context
   const [comment, setComment] = useState("");
   const [error, setError] = useState("");
+  const navigate=useNavigate()
   const [ratingSuccessMessage, setRatingSuccessMessage] = useState("");
   const socket = useRef(null); // Use ref for socket connection
   // const formatDate = (dateString) => {
@@ -32,6 +34,9 @@ const FourthPage = ({ book }) => {
         const response = await axios.get(
           `http://localhost:5000/api/${bookId}/ratings`
         );
+        if(!response.ok){
+          navigate('*')
+        }
         setRatings(response.data);
         console.log(ratings);
       } catch (error) {
@@ -65,10 +70,13 @@ const FourthPage = ({ book }) => {
 
   const handleRatingSubmit = async () => {
     try {
-      await axios.post(`http://localhost:5000/api/${bookId}/rating`, {
+     const response= await axios.post(`http://localhost:5000/api/${bookId}/rating`, {
         rating: selectedRating,
         userId,
       });
+      if(!response.ok){
+        navigate('*')
+      }
       setRatingSuccessMessage("Rating submitted successfully!");
     } catch (error) {
       console.error("Error submitting rating", error);
@@ -82,6 +90,9 @@ const FourthPage = ({ book }) => {
       const response = await axios.get(
         `http://localhost:5000/api/${bookId}/comments`
       );
+      if(!response.ok){
+        navigate('*')
+      }
       setComments(response.data.comments);
     } catch (err) {
       setError("Error fetching comments");

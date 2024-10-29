@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import {useNavigate} from 'react-router-dom'
 
 export default function EmailTrackingForm() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
-
+const navigate=useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3000/submit-email', { email });
+     const response= await axios.post('http://localhost:3000/submit-email', { email });
+     if(!response.ok){
+      navigate('*')
+    }
       setSubmitted(true);
     } catch (err) {
       console.error('Error sending email:', err);

@@ -5,7 +5,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import StarIcon from "@mui/icons-material/Star";
 import ShareModal from "./ReelShare";
 import { io } from "socket.io-client";
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 const socket = io("http://localhost:8080", {
   reconnection: true,
 });
@@ -20,10 +20,14 @@ const SavedReelDisplay = ({ toggleCommentBox }) => {
   const userId = "66ddfda258de85a04f9880fb";
   const params = new URLSearchParams(location.search);
   const reelId = params.get("reelId");
+  const navigate=useNavigate();
   // fetch all reels
   useEffect(() => {
     const fetchSavedReels = async () => {
       const response = await fetch("http://localhost:8080/api/reels");
+      if(!response.ok){
+        navigate('*')
+      }
       const data = await response.json();
       const filteredSavedReels = data.filter(
         (Savedreel) => Savedreel.isSave === true
@@ -35,18 +39,24 @@ const SavedReelDisplay = ({ toggleCommentBox }) => {
   // add like
   const AddReelLike = async (reelId) => {
     try {
-      await axios.put(`http://localhost:8080/api/reels/${reelId}/Addlike`, {
+      const response=await axios.put(`http://localhost:8080/api/reels/${reelId}/Addlike`, {
         userId,
       });
+      if(!response.ok){
+        navigate('*')
+      }
     } catch (err) {
       console.log("Add reel like error", err.message);
     }
   };
   const RemoveReelLike = async (reelId) => {
     try {
-      await axios.put(`http://localhost:8080/api/reels/${reelId}/Removelike`, {
+      const response=await axios.put(`http://localhost:8080/api/reels/${reelId}/Removelike`, {
         userId,
       });
+      if(!response.ok){
+        navigate('*')
+      }
     } catch (err) {
       console.log(err.message);
     }
@@ -54,7 +64,10 @@ const SavedReelDisplay = ({ toggleCommentBox }) => {
 
   const handleSaveReel = async (reelId) => {
     try {
-      await axios.post(`http://localhost:8080/api/reels/${reelId}/saveReel`);
+      const response= await axios.post(`http://localhost:8080/api/reels/${reelId}/saveReel`);
+      if(!response.ok){
+        navigate('*')
+      }
     } catch (err) {
       console.log("Error in saving reel", err.message);
     }

@@ -12,7 +12,7 @@ import LibraryProfilePage from '../src/AllFolders/MyProfilePage/LibraryProfilePa
 //import BuySellRoutes from "./AllFolders/buy-sell/BuySellRoutes";
 import HomeScreen from "./AllFolders/buy-sell/components/HomeScreen";
 import BookSearch from "./AllFolders/Library/Components/BookSearch";
-
+import NotFound from "./AllFolders/NotFound/NotFound";
 function App() {
   return (
     <BrowserRouter>    
@@ -57,7 +57,7 @@ function App() {
         {/* <Route path = "/buy-sell" element ={<HomeScreen/>}/> */}
 
         <Route path = "/buy-sell" element ={<HomeScreen/>}/>
-
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
