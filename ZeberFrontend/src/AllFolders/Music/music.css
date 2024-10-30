@@ -9,8 +9,9 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr 2fr;
-    background: linear-gradient(#050505, #18181d);;
-   
+    background: linear-gradient(#050505, #18181d);   
+    overflow-y:hidden; 
+    overflow-X: hidden;
 }
 
 .music-container .controls {
@@ -57,6 +58,9 @@
     cursor: pointer;
 }
 
+
+
+/*sidebar css==========================================================*/
 .music-container .sidebar .logo img {
     width: 80px; /* Set the logo width */
     height: auto; /* Maintain aspect ratio */
@@ -69,9 +73,6 @@
     border-radius: 8px;
 }
 
-
-
-
 .music-container .sidebar{
     height: 100vh;
     background-color: #18181d;
@@ -81,7 +82,16 @@
     justify-content: flex-start ;
     z-index: 10000;
     transition: all 0.6s ease;
+    position: fixed;
+    transition: left 0.3s ease;
+   top:0 ; 
+   left:-100%;
 }
+
+.music-container .sidebar.sidebar-open{
+    left:0 ; 
+}
+
 
 .music-container .sidebar .logo{
     display: flex;
@@ -161,69 +171,72 @@
     color: #919191;
 }
 
-/*sidebar opened*/
 
-.music-container .sidebar.open {
-    left: 0;
-    transition: left 0.3s ease;
-}
 
-/* Sidebar closed */
-.music-container .sidebar.closed {
-    left: -100%;
-    transition: left 0.3s ease;
-}
+
+
+
+
 
 .music-container main{
     padding: 20px 36px;
 }
 
-.music-container main header{
+
+
+/*header css ***======================================================================*/
+
+/* .music-container main header{
     display: flex;
     align-items: center;
-    .music-container main header {
-        display: flex;
-        justify-content: center; /* Center the search bar */
-        width: 100%; /* Ensure the header takes up the full width */
-    }
-}
+     width: 100%; 
+    
 
-.music-container main header .nav-links{
+
+} */
+
+/* .music-container main header .nav-links{
     display: flex;
     align-items: center;
     gap: 20px;
-}
+} */
 
-.music-container main header .nav-links a{
+/* .music-container main header .nav-links a{
     text-transform: uppercase;
     color: #919191;
     transition: all 0.3s ease;
-}
+} */
 
-.music-container main header .search {
+/* .music-container main header .search {
     display: flex;
     align-items: center;
     gap: 6px;
-    width: 50vw; /* Set the width to 80% of the viewport width */
+    width: 50vw;
     background-color: #1d1d1d;
     border: 1px solid #464748;
     padding: 10px;
     border-radius: 8px;
-    margin: 0 auto; /* Center the search bar */
-}
+    margin: 0 auto; 
+} */
 
 
-.music-container main header .search input {
+/* .music-container main header .search input {
     width: 100%;
     background-color: transparent;
     border: none;
     outline: none;
     color: #fff;
+} */ 
+
+/*Music trending section=============================================================================*/
+
+.music-container main.main{
+    margin-left:250px;
+    width:90%;
 }
 
-
 .music-container main .trending{
-    margin-top: 40px;
+    margin-top: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -280,6 +293,8 @@
     height: 280px;
 }
 
+
+/*Music playlist section ==============================================================*/
 .music-container main .playlist{
     margin-top: 14px;
     display: flex;
@@ -431,42 +446,17 @@
     color: #919191;
 }
 
+
+
+/*music right section*/
 .music-container .music-right-section{
+    
     padding: 20px 36px 20px 0;
+    margin-top:80px;
+    margin-left:190px;
    
 }
 
-.music-container .music-right-section .profile{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 18px;
-    margin-bottom: 40px;
-}
-
-.music-container .music-right-section .profile .user{
-    display: flex;
-}
-
-.music-container .music-right-section .profile .user .left{
-    display: flex;
-    align-items: center;
-    background: #32323d;
-    padding: 6px;
-    border-radius: 6px 0 0 6px;
-}
-
-.music-container .music-right-section .profile .user .left img{
-    width: 30px;
-    height: 30px;
-}
-
-.music-container .music-right-section .profile .user .right{
-    background-color: #25252d;
-    border-radius: 0 6px 6px 0;
-    padding: 13px;
-    color: #fff;
-}
 
 .music-container .music-right-section .music-player{
     color: #fff;
@@ -498,7 +488,7 @@
 }
 
 .music-container .music-right-section .music-player .song-info img{
-    width: 280px;
+ 
     height: 390px;
 }
 
@@ -608,14 +598,22 @@
 }
 
 @media screen and (max-width: 1400px) {
+    .music-container main.main{
+        width:45vw;
+     }
+ 
+     .music-container .music-right-section{
+          width:30vw;
+          margin-left:0px
+     }
     
     .music-container .sidebar .playing .bottom p{
         font-size: 10px;
     }
 
-    .music-container main header .search{
+    /* .music-container main header .search{
         width: 50vw;
-    }
+    } */
 
     .music-container main .trending .left .info h2{
         font-size: 36px;
@@ -650,11 +648,18 @@
 }
 
 @media screen and (max-width: 1200px) {
+    .music-container main.main{
+       width:45vw;
+    }
+
+    .music-container .music-right-section{
+         width:30vw
+    }
     
-    .music-container main header .search{
+    /* .music-container main header .search{
         width: 100%;
         width: 50vw;
-    }
+    } */
 
     .music-container main .trending .left .info h2{
         font-size: 24px;
@@ -683,6 +688,10 @@
         width: 100%;
     }
     
+
+    .music-container .music-right-section{
+        margin-left:0px;
+    }
     .music-container .music-right-section .music-player{
         height: 88%;
     }
@@ -724,15 +733,19 @@
 }
 
 @media screen and (max-width: 992px) {
-    
+    .music-container main.main{
+        margin-left: 0px;
+        width:50vw;
+    }
+
+    .music-container .music-right-section{
+        width:45vw;
+    }
+
     .container{
         grid-template-columns: 3fr 2fr;
     }
 
-    .music-container .sidebar{
-        position: absolute;
-        left: -100%;
-    }
 
     .music-container .sidebar .playing{
         display: none;
@@ -796,9 +809,9 @@
         display: none;
     }
 
-    .music-container main header .search{
-        width: 50vw;
-    }
+    /* .music-container main header .search{
+        width: 0vw;
+    } */
 
     .music-container main header .search input{
         display: block;
@@ -806,13 +819,9 @@
 
     .music-container .music-right-section{
         padding: 20px 36px;
+        width:80vw;
     }
 
-    .music-container .music-right-section .profile{
-        justify-content: center;
-        display: none;
-        margin-bottom: 20px;
-    }
 
     .music-container .music-right-section .music-player{
         height: 100%;

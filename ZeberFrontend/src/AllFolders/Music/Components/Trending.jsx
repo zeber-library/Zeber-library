@@ -2,15 +2,16 @@ import React from 'react';
 
 // The Trending component displays information about a trending audiobook and allows the user to start playback.
 const Trending = ({ 
-    playSong  //function to play the song (set isPlaying- true and setIndex)
- }) => {
+    playSong,  //function to play the song (set isPlaying- true and setIndex)
+    song
+}) => {
     return (
         <div className="trending">
             <div className="left">
                 <h5>Trending Audiobook</h5>
                 <div className="info">
-                    <h2>The Silent Patient</h2>
-                    <h4>Alex Michaelides</h4>
+                    <h2>{song.songName}</h2>
+                    <h4>{song.author}</h4>
                     <h5>42 Million Plays</h5>
                     <div className="buttons">
                         {/*button to play the trending song  */}
@@ -20,7 +21,7 @@ const Trending = ({
                 </div>
             </div>
             {/*trending song image  */}
-            <img src="/MusicImages/shopping.webp" alt="Trending Audiobook"/>
+            <img src={song.coverPath} alt="Trending Audiobook"/>
         </div>
     );
 };

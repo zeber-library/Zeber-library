@@ -9,12 +9,13 @@ import Playlist from './Components/Playlist';
 import Profile from './Components/Profile';
 import MusicPlayer from './Components/MusicPlayer';
 import "./music.css"
+import axios from 'axios';
 
 const Music = () => {
-     // Array of song objects, each containing the song name, file path, and cover image path
-     // supposed to be dynamic
-    const songs = [
-        { songName: "The Silent Patient", filePath: "songs/10.mp3", coverPath: "/MusicImages/shopping.webp" },
+    // Array of song objects, each containing the song name, file path, and cover image path
+    // supposed to be dynamic
+    const songArray = [
+        { songName: "The Silent Patient", filePath: "songs/10.mp3", coverPath: "/MusicImages/shopping.webp", Trending: true },
         { songName: "Robinson Crusoe", filePath: "songs/1.mp3", coverPath: "/MusicImages/best-novels-of-all-time-3-62c2f5a1643f1__700.jpg" },
         { songName: "Harry Potter", filePath: "songs/2.mp3", coverPath: "/MusicImages/Harry-Potter-and-the-Chamber-of-Secrets-book-cover.webp" },
         { songName: "All the Night We Cannot See", filePath: "songs/3.mp3", coverPath: "/MusicImages/product-jpeg-500x500.webp" },
@@ -24,6 +25,9 @@ const Music = () => {
     // states -------
     //sidebar(open/close)
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    //for song array
+    const [songs, setSongsArray] = useState(songArray);
 
     //song index 
     const [songIndex, setSongIndex] = useState(0);
@@ -46,6 +50,41 @@ const Music = () => {
         console.log(isSidebarOpen);
     };
 
+    // Effect to fetch book objects from database
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/v1/books/getAll`)
+            .then((res) => {
+                setSongsArray(res.data.books);
+            }).catch((err) => {
+                console.error(err);
+            })
+    }, [])
+
+    //! Effect to handle window resizing and set sidebar to false if < 992px
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 992) {
+                setIsSidebarOpen(false); // Close sidebar on smaller screens
+            } else {
+                setIsSidebarOpen(true); // Keep sidebar open on larger screens
+            }
+        };
+
+        // Initial check on load
+        handleResize();
+
+        // Add event listener for window resize
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []); // Empty array ensures this effect only runs on mount and unmount
+
+
+
+
 
     //function for setting the index of the song 
     const playSong = (index = songIndex) => {
@@ -53,7 +92,7 @@ const Music = () => {
         setIsPlaying(true);
     };
 
-   //toggle function play and pause the song 
+    //toggle function play and pause the song 
     const togglePlayPause = () => {
         setIsPlaying(!isPlaying);
     };
@@ -73,6 +112,16 @@ const Music = () => {
         setSongIndex((prevIndex) => (prevIndex + 1) % songs.length);
     };
 
+    //function to find one trending book
+    function isTrending(songs){
+        for(let i = 0; i < songs.length; i++){
+            if(songs[i].Trending === true){
+                return songs[i];
+            }
+        }
+    }
+    const song = isTrending(songs);
+    console.log(song);
 
     //function  to play the first song 
     const playPrevSong = () => {
@@ -96,12 +145,13 @@ const Music = () => {
 
 
             {/**main section  */}
-            <main>
-                  {/* Header component with sidebar toggle */}
+            <main className='main'>
+
+                {/* Header component with sidebar toggle */}
                 <Header toggleSidebar={toggleSidebar} />
 
                 {/* Trending section with a function to play the first song */}
-                <Trending playSong={() => playSong(0)} />
+                <Trending playSong={() => playSong(0)} song={song} />
 
                 {/* Playlist component to list all available songs */}
                 <Playlist songs={songs} playSong={playSong} />
@@ -109,10 +159,9 @@ const Music = () => {
 
             {/*right section */}
             <div className='music-right-section' >
-                {/*Profile section  */}
-                <Profile />
 
-                 {/* MusicPlayer component to control playback and display current song details */}
+
+                {/* MusicPlayer component to control playback and display current song details */}
                 <MusicPlayer
                     song={songs[songIndex]}
                     isPlaying={isPlaying}
@@ -124,7 +173,7 @@ const Music = () => {
                     onProgressChange={onProgressChange}
                 />
 
-                  {/* Audio element for playback */}
+                {/* Audio element for playback */}
                 <audio
                     ref={audioElement}
                     src={songs[songIndex].filePath}

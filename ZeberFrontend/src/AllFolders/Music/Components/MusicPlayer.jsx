@@ -31,8 +31,8 @@ const MusicPlayer = ({
                     <img src={song.coverPath} alt={song.songName} />
                     <div className="description">
                         <h3>{song.songName}</h3>
-                        <h5>Paulo Coelho</h5>
-                        <p>Classic Fiction</p>
+                        <h5>{song.author}</h5>
+                        <p>{song.genre}</p>
                     </div>
 
                      {/* Container for player controls */}
