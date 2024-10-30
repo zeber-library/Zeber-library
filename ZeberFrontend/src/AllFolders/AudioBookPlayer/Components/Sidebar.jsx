@@ -1,5 +1,5 @@
 // Sidebar.js
-import React from "react";
+import React , {useEffect} from "react";
 import {Link} from "react-router-dom"
 
 //receiveing props from the AudioBookPlayer component 
@@ -7,14 +7,12 @@ import {Link} from "react-router-dom"
 
 //toggleSidebar -- for toggling the sidebar if closed then open and viceversa 
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
+
+
   return (
     //*hiding and showing the sidebar *
     <aside
-      className="sidebar"
-      style={{
-        left: isSidebarOpen ? "0" : "-100%",
-        transition: "left 0.3s ease",
-      }}
+       className={`sidebar ${isSidebarOpen ? "sidebar-open" : ""}`}
     >
       <div className="logo">
         {/*button for closing the sidebar inside sidebar  */}
@@ -77,11 +75,11 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
       <div className="playing">
         <div className="top">
           <img src="/AudioBookPlayer/images/download.jpg" alt="Now Playing" />
-          <h4>
+          <p>
             Kindle
             <br />
             Oasis
-          </h4>
+          </p>
         </div>
         <div className="bottom">
           <i className="bx bx-headphone"></i>
