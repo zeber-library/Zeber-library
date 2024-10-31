@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    body .LibraryDeliveryPage .header {
+        flex-direction: column;
+        height: auto;
+        padding: 2%;
+        gap: 5px;
+        font-size: small;
+    }
+    body .LibraryDeliveryPage .logo {
+        width: 50%;
+    }
+    body .LibraryDeliveryPage .mainBody {
+        grid-template-columns: 100%;
+        margin: 5% 0;
+        width: 90%;
+        row-gap: 10px;
+
+    }
+
+    body .LibraryDeliveryPage .DeliveryRight {
+        gap: 10px;
+    }
+
+    body .LibraryDeliveryPage .DeliveryRight .card {
+        border-radius: 0;
+    }
+
+    body .LibraryDeliveryPage .DeliveryRight .loginBox {
+        width: 100%;
+    }
+
+    body .LibraryDeliveryPage .DeliveryRight .loginBox button {
+        width: auto;
+        padding: 10px;
+    }
+
+    body .LibraryDeliveryPage .DeliveryRight .addMoreAddress div  {
+        width: 100%;
+    }
+    body .LibraryDeliveryPage .DeliveryRight .addMoreAddress div button {
+        padding: 10px;
+        width: 100%;
+    }
+}
+
+.LibraryDeliveryPage button {
+    cursor: pointer;
+}
+
+body .LibraryDeliveryPage {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.LibraryDeliveryPage .header {
+    height: 12vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #2874F0;
+}
+
+.LibraryDeliveryPage .header .logo {
+    height: 80%;
+    background: #fff;
+    padding: .5%;
+    border-radius: 10px;
+}
+
+.LibraryDeliveryPage .header .heading {
+    color: white;
+    font-weight: 600;
+}
+
+.LibraryDeliveryPage .mainBody {
+    align-self: center;
+    display: grid;
+    width: 80%;
+    grid-template-columns: 65% 30%;
+    column-gap: 5%;
+    margin: 2% 0;
+}
+
+.LibraryDeliveryPage .DeliveryRight {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.LibraryDeliveryPage .DeliveryRight .card {
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px lightgray;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    padding: 2%;
+}
+
+.LibraryDeliveryPage .DeliveryRight .cardHead {
+    font-size: large;
+    font-weight: 600;
+    color: white;
+    background: #2874F0;
+    padding: 2%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+}
+
+
+.LibraryDeliveryPage .DeliveryRight .loginBox input {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 2px solid #2874F0;
+    width: 60%;
+    font-size: 16px;
+}
+
+.LibraryDeliveryPage .DeliveryRight .loginBox .loginAndButton {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LibraryDeliveryPage .DeliveryRight .loginBox button {
+    background: #ff5722;
+    padding: 15px;
+    width: 20%;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.LibraryDeliveryPage .DeliveryRight .addMoreAddress div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+}
+
+.LibraryDeliveryPage .DeliveryRight .addMoreAddress div input {
+    border-radius: 5px;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+}
+
+.LibraryDeliveryPage .DeliveryRight .addMoreAddress div button {
+    background: #ff5722;
+    padding: 15px;
+    width: auto;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.LibraryDeliveryPage .DeliveryRight .addMoreAddress input {
+    border: 1px solid gray;
+    font-size: 16px;
+    padding: 12px;
+}
+
+.LibraryDeliveryPage .orderBox .orderBoxContent {
+    display: grid;
+    padding: 2% 2%;
+    grid-template-columns: 30% 70%;
+}
+
+.LibraryDeliveryPage .orderBox .orderBoxContent img {
+    width: 90%;
+}
+
+/* .orderBox .orderBoxContent{ */
+.LibraryDeliveryPage .orderBox .orderBoxContent .orderDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+
+}
+
+.LibraryDeliveryPage .orderBox .orderBoxContent .orderDetails .counter {
+    width: 17%;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.LibraryDeliveryPage .orderBox .orderBoxContent .orderDetails span {
+    text-align: center;
+    border: 1px solid gray;
+}
+
+.LibraryDeliveryPage .orderBox .orderBoxContent .orderDetails button {
+    width: 100%;
+    font-size: 20px;
+
+    border-radius: 50%;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.LibraryDeliveryPage .orderBox .OrderCards {
+    display: flex;
+    flex-direction: column;
+}
+
+.LibraryDeliveryPage .priceDetails {
+    width: 100%;
+    padding: 5%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.LibraryDeliveryPage .priceDetails button {
+    padding: 10px;
+    background: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
