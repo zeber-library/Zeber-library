@@ -6,13 +6,18 @@ Router.post("/message", async (req, res) => {
     try{
         const body = req.body;
 
-        await EntryObject.create({ body });
+        await EntryObject.create({
+            name: body.name,
+            email: body.email,
+            message: body.message
+        });
 
-        return res.status(202).json({message: Accepted});
+        return res.status(201).json({message: "Created"});
     }
-    catch{
-        return res.status(500).json({message: Server_Error});
+    catch(err){
+        console.log(err);
+        return res.status(500).json({message: err});
     }
-})
+});
 
 module.exports = Router;
